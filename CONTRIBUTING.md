@@ -10,12 +10,14 @@
   - doc/...
   - refactor/...
 1. Make commits to your feature branch. Prefix each commit like so:
-  - (feat) Added a new feature
-  - (fix) Fixed inconsistent tests [Fixes #0]
-  - (refactor) ...
-  - (cleanup) ...
-  - (test) ...
-  - (doc) ...
+Prefix each commit like so
+  - (feat) adds Facebook login ---- completed feature into the org repo.
+  - (fix) fixes inconsistent tests [issue #7] ---- completed bug fix into the org repo.
+  - (refactor) refactors database to mongo ---- completed refactor cycle into the org repo.
+  - (cleanup) reformats user model to conform to style guide ---- no real code. Only formatting and comments.
+  - (test) adds testing for issue #7  ---- Any new or changed test code into the org repo.
+  - (doc) adds model diagram to /doc folder ---- documentation for the outside world. Code comments fall under cleanup.
+  - (inc) saves hourly progress on oath feature branch ---- "incremental" or "incomplete" periodic commits to a personal fork
 1. When you've finished with your fix or feature, Rebase upstream changes into your branch. submit a [pull request][]
    directly to master. Include a description of your changes.
 1. Your pull request will be reviewed by another maintainer. The point of code
@@ -33,7 +35,7 @@
 Use github’s interface to make a fork of the repo, then add that repo as an upstream remote:
 
 ```
-git remote add upstream https://github.com/common-badger/scavenger.git
+git remote add upstream https://github.com/common-badger/wanderlust.git
 ```
 
 ### Cut a namespaced feature branch from master
@@ -56,22 +58,18 @@ git checkout -b `your-branch-name`
 ### Make commits to your feature branch. 
 
 Prefix each commit like so
-  - (feat) Added a new feature
-  - (fix) Fixed inconsistent tests [Fixes #0]
-  - (refactor) ...
-  - (cleanup) ...
-  - (test) ...
-  - (doc) ...
 
-Make changes and commits on your branch, and make sure that you
-only make changes that are relevant to this branch. If you find
-yourself making unrelated changes, make a new branch for those
-changes.
+  * (feat) adds Facebook login ---- completed feature into the org repo.
+  * (fix) fixes inconsistent tests [issue #7] ---- completed bug fix into the org repo.
+  * (refactor) refactors database to mongo ---- completed refactor cycle into the org repo.
+  * (cleanup) reformats user model to conform to style guide ---- no real code. Only formatting and comments.
+  * (test) adds testing for issue #7  ---- Any new or changed test code into the org repo.
+  * (doc) adds model diagram to /doc folder ---- documentation for the outside world. Code comments fall under cleanup.
+  * (inc) saves hourly progress on oath feature branch ---- "incremental" or "incomplete" periodic commits to a personal fork
 
 #### Commit Message Guidelines
 
-- Commit messages should be written in the present tense; e.g. "Fix continuous
-  integration script".
+- Commit messages should begin in lowercase and be written in the present tense in such a way as to complete the sentence "This commit..." e.g. "fixes continuous integration script".
 - The first line of your commit message should be a brief summary of what the
   commit changes. Aim for about 70 characters max. Remember: This is a summary,
   not a detailed description of everything that changed.
@@ -162,17 +160,3 @@ This is just to help you organize your process
 
 If you follow all of these guidelines and make good changes, you should have
 no problem getting your changes merged in.
-
-
-<!-- Links -->
-[style guide]: https://github.com/hackreactor-labs/style-guide
-[n-queens]: https://github.com/hackreactor-labs/n-queens
-[Underbar]: https://github.com/hackreactor-labs/underbar
-[curriculum workflow diagram]: http://i.imgur.com/p0e4tQK.png
-[cons of merge]: https://f.cloud.github.com/assets/1577682/1458274/1391ac28-435e-11e3-88b6-69c85029c978.png
-[Bookstrap]: https://github.com/hackreactor/bookstrap
-[Taser]: https://github.com/hackreactor/bookstrap
-[tools workflow diagram]: http://i.imgur.com/kzlrDj7.png
-[Git Flow]: http://nvie.com/posts/a-successful-git-branching-model/
-[GitHub Flow]: http://scottchacon.com/2011/08/31/github-flow.html
-[Squash]: http://gitready.com/advanced/2009/02/10/squashing-commits-with-rebase.html
