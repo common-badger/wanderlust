@@ -1,7 +1,7 @@
 # Project Name #
  
 ## Heading ##
-  > Local Scavenger Hunt / DiscoverLocal / Urban Explorer / Extravert / Afoot / Wanderlust 
+  > Wanderlust 
 
 ## Sub-Heading ##
   > Curate your city’s hidden gems for others to fall in love with or cure your wanderlust by exploring the city through a new perspective. 
