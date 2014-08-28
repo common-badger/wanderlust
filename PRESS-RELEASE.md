@@ -1,40 +1,58 @@
 # Project Name #
  
-<!--
-
- There is an approach called "working backwards" that is widely used at Amazon. They work backwards from the customer, rather than starting with an idea for a product and trying to bolt customers onto it. While working backwards can be applied to any specific product decision, using this approach is especially important when developing new products or features.
-
- For new initiatives a product manager typically starts by writing an internal press release announcing the finished product. The target audience for the press release is the new/updated product's customers, which can be retail customers or internal users of a tool or technology. Internal press releases are centered around the customer problem, how current solutions (internal or external) fail, and how the new product will blow away existing solutions.
-
- Keep it simple. 3-4 sentences for each heading. Cut out the fat. Don't make it into a spec.
-
- Oh, and I also like to write press-releases in what I call "Oprah-speak" for mainstream consumer products. Imagine you're sitting on Oprah's couch and have just explained the product to her, and then you listen as she explains it to her audience. That's "Oprah-speak", not "Geek-speak".
-
--->
-
 ## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+  > Local Scavenger Hunt / DiscoverLocal / Urban Explorer / Extravert / Afoot / Wanderlust 
 
 ## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  > Curate your city’s hidden gems for others to fall in love with or cure your wanderlust by exploring the city through a new perspective. 
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  > Ever eaten Ike's Daemon Bruce? Or bought a sword at the Mission pirate shop and challenged someone to a duel? Go on a solo adventure or invite your friends to explore scavenger hunts created by city veterans.
+
+  > Love your city, and want to share your favorite spots with the world? Spread the love by creating a scavenger hunt for fellow urban explorers to enjoy.
 
 ## Problem ##
-  > Describe the problem your product solves.
+> Popular travel sites do not offer resources for fully immersing yourself and exploring a city. They focus on advertising commercial events and standard tourist attractions, while completely omitting many of the greatest secrets around town.
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+> {Scavenger Hunt} distills local knowledge into tours and games that cost you nothing to explore. It’s a great way to get to know a new city, or rediscover your home town, like having a few dozen locals show you around town whenever you’re ready to go.
+
+> Wanderlust is a beautiful feeling and we want to provide you with the right map for your journey. Share the joys of exploration and set up your own scavenger hunt for others to discover. Or take the plunge on an adventure of your own, laid out by a playful expert around town.
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
+  > This shit rocks
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+  > There are already amazing free tours waiting for you to discover. Just launch the app, and launch yourself out of that chair. Visit people and places you never knew about by taking a curated tour that matches your own interests.
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  > “The San Francisco Mission scavenger hunt was an entire day’s worth of adventure. I had no idea any of these places existed, and would have never been able to find them on Trip Advisor or Google. It was like I had a friend lead me around town the whole time. ”
 
 ## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+  > Curate a trip. Go explore. Cure wanderlust.
+
+
+  > Never explore alone. The Amazing Race for a city. Experience the city through a local’s point of view. Explore beyond the obvious. Your own personal tour guide.
+
+
+
+  > Whenever you visit a new city (or place you’ve never been before), the first question you might ask is “what should I do?” 
+
+Participant - Young people. Travelers. Those who don’t plan as much
+Creators - City veterans. Those who love their city, and want to share the love.
+
+
+Lead me on a tour of the greatest public art. I have an afternoon for a romantic stroll. Show me the secret rooftop accesses around my neighborhood.
+
+Keywords
+-Rediscover
+off the beaten trail
+See your city with new eyes
+
+
+
+Play  Local  Joy  Share  Knowledge  Tour  Visit  Secrets  Discover  Adventure
+Hidden gems  Game   New  Conversation   Rediscover   Immerse
+
+
+
