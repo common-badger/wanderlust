@@ -1,10 +1,6 @@
-# Project Name #
+# Wanderlust #
  
-## Heading ##
-  > Wanderlust 
-
-## Sub-Heading ##
-  > Curate your city’s hidden gems for others to fall in love with or cure your wanderlust by exploring the city through a new perspective. 
+## Curate your city’s hidden gems for others to fall in love with or cure your wanderlust by exploring the city through a new perspective ##
 
 ## Summary ##
   > Ever eaten Ike's Daemon Bruce? Or bought a sword at the Mission pirate shop and challenged someone to a duel? Go on a solo adventure or invite your friends to explore scavenger hunts created by city veterans.
@@ -30,11 +26,4 @@
 
 ## Closing and Call to Action ##
   > Curate a trip. Go explore. Cure wanderlust.
-
-
-  > Never explore alone. The Amazing Race for a city. Experience the city through a local’s point of view. Explore beyond the obvious. Your own personal tour guide.
-
-
-
-  > Whenever you visit a new city (or place you’ve never been before), the first question you might ask is “what should I do?”
 
