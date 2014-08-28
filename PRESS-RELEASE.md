@@ -36,23 +36,5 @@
 
 
 
-  > Whenever you visit a new city (or place you’ve never been before), the first question you might ask is “what should I do?” 
-
-Participant - Young people. Travelers. Those who don’t plan as much
-Creators - City veterans. Those who love their city, and want to share the love.
-
-
-Lead me on a tour of the greatest public art. I have an afternoon for a romantic stroll. Show me the secret rooftop accesses around my neighborhood.
-
-Keywords
--Rediscover
-off the beaten trail
-See your city with new eyes
-
-
-
-Play  Local  Joy  Share  Knowledge  Tour  Visit  Secrets  Discover  Adventure
-Hidden gems  Game   New  Conversation   Rediscover   Immerse
-
-
+  > Whenever you visit a new city (or place you’ve never been before), the first question you might ask is “what should I do?”
 
