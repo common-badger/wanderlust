@@ -38,26 +38,26 @@
   1. Splash Page (enter location)
   2. Visit A Tour (sorted by rating/nearby) – this can be pre-populated
     + a. Tour 
-      <br> i. Title
-      <br> ii. Author
-      <br> iii. Description
-      <br> iv. Rating
-      <br> v. Area
-      <br> vi. Time
-      <br> vii. All spots
-    + b.  Spot 
-      <br> i. Location
-      <br> ii. Action
-      <br> iii. Photo
-      <br> iv. Title
-      <br> v. Tag
-      <br> vi. Longitude/latitude 
+        * i. Title
+        * ii. Author
+        * iii. Description
+        * iv. Rating
+        * v. Area
+        * vi. Time
+        * vii. All spots
+    + b. Spot 
+        * i. Location
+        * ii. Action
+        * iii. Photo
+        * iv. Title
+        * v. Tag
+        * vi. Longitude/latitude 
     + c. Embark! Call to action
-      <br> i. Pre-populate first location into map
+        * i. Pre-populate first location into map
   3. Create a tour (log in gated)
     + a. Title
-      <br> i. Same attributes as “Tour” from Visit A Tour (see 2a)
+        * i. Same attributes as “Tour” from Visit A Tour (see 2a)
     + b. Add Spot
-      <br> i. One at a time (only show one by default)
-      <br> ii. “Add more spots” button 
-      <br> iii. Same attributes as “Spot” from Visit A Tour (see 2b)
+        * i. One at a time (only show one by default)
+        * ii. “Add more spots” button 
+        * iii. Same attributes as “Spot” from Visit A Tour (see 2b)
