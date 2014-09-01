@@ -1,4 +1,4 @@
-// Generated on 2014-08-29 using generator-soa 1.0.1
+// Generated on 2014-09-01 using generator-angular-fullstack 2.0.13
 'use strict';
 
 module.exports = function (grunt) {
@@ -300,7 +300,7 @@ module.exports = function (grunt) {
     ngtemplates: {
       options: {
         // This should be the name of your apps angular module
-        module: 'greenfieldWanderlustApp',
+        module: 'wanderlustApp',
         htmlmin: {
           collapseBooleanAttributes: true,
           collapseWhitespace: true,

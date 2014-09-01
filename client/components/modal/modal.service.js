@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('greenfieldWanderlustApp')
+angular.module('wanderlustApp')
   .factory('Modal', function ($rootScope, $modal) {
     /**
      * Opens a modal

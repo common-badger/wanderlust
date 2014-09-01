@@ -1,5 +1,5 @@
 {
-  "generator-soa": {
+  "generator-angular-fullstack": {
     "insertRoutes": true,
     "registerRoutesFile": "server/routes.js",
     "routesNeedle": "// Insert routes below",
@@ -23,12 +23,13 @@
       "twitterAuth": true
     }
   },
-  "generator-ng-components": {
+  "generator-ng-component": {
     "routeDirectory": "client/app/",
     "directiveDirectory": "client/app/",
     "filterDirectory": "client/app/",
     "serviceDirectory": "client/app/",
     "basePath": "client",
+    "moduleName": "",
     "filters": [
       "uirouter"
     ],
