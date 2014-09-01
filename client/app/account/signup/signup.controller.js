@@ -1,18 +1,11 @@
 'use strict';
-(function(){
-  var SignupCtrl = function ($scope, Auth, $location, $window) {
 
-
+angular.module('wanderlustApp')
+  .controller('SignupCtrl', function ($scope, Auth, $location, $window) {
     $scope.user = {};
     $scope.errors = {};
-    $scope.register = register;
-  
-    $scope.loginOauth = loginOauth;
-  
 
-    ///////////////////////
-
-    function register(form) {
+    $scope.register = function(form) {
       $scope.submitted = true;
 
       if(form.$valid) {
@@ -36,18 +29,9 @@
           });
         });
       }
-    }
-  
-    function loginOauth(provider) {
+    };
+
+    $scope.loginOauth = function(provider) {
       $window.location.href = '/auth/' + provider;
-    }
-  
-  };
-
-  SignupCtrl
-    .$inject = ['$scope', 'Auth', '$location', '$window'];
-  angular
-    .module('greenfieldWanderlustApp')
-    .controller('SignupCtrl', SignupCtrl)
-
-}).call(this);
+    };
+  });

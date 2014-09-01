@@ -5,7 +5,7 @@
 module.exports = {
   // MongoDB connection options
   mongo: {
-    uri: 'mongodb://localhost/greenfieldwanderlust-dev'
+    uri: 'mongodb://localhost/wanderlust-dev'
   },
 
   seedDB: true

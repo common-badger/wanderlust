@@ -1,5 +1,5 @@
 {
-  "name": "greenfield-wanderlust",
+  "name": "wanderlust",
   "version": "0.0.0",
   "main": "server/app.js",
   "dependencies": {

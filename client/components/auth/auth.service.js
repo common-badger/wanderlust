@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('greenfieldWanderlustApp')
+angular.module('wanderlustApp')
   .factory('Auth', function Auth($location, $rootScope, $http, User, $cookieStore, $q) {
     var currentUser = {};
     if($cookieStore.get('token')) {
