@@ -8,7 +8,7 @@ Some of the blanks in this table will be filled in as we decide to provide that 
 |-------------------------|-------------------|----------------------|-----------------|-------------|
 | api/users/              | index of users*   | create new user      |                 |             |
 | api/users/me            | private profile   |                      |                 |             |
-| api/users/:id           | public profile    |                      | modify user rec | delete user |
+| api/users/:id           | public profile    |                      | modify user     | delete user |
 | api/users/:id/password  |                   |                      | change password |             |
 | api/spots/              | index of spots    | create new spot      |                 |             |
 | api/spots/:id           | spot details      |                      | modify spot     | delete spot |
@@ -22,7 +22,7 @@ Some of the blanks in this table will be filled in as we decide to provide that 
 | api/tours/:id/cost      |                   | report money spent   |                 |             |
 | api/spots/:id/photo     |                   | upload a new pic     |                 |             |
 | api/spots/:id/geo       |                   | report lon/latitude  |                 |             |
-| api/spots/:id/tags      |                   | new tag(s) for tour  |                 |             |
+| api/spots/:id/tags      |                   | new tag(s) for spot  |                 |             |
 | api/tours/:id/tags      |                   | new tag(s) for tour  |                 |             |
 
 \* admin-only functionality
