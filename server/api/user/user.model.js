@@ -3,7 +3,8 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var crypto = require('crypto');
-var authTypes = ['github', 'twitter', 'facebook', 'google'];
+// var authTypes = ['github', 'twitter', 'facebook', 'google'];  // FIXME: the seed came with 'github'
+var authTypes = ['twitter', 'facebook', 'google'];
 
 var UserSchema = new Schema({
   name: String,

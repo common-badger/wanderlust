@@ -46,7 +46,7 @@
         * vi. Time
         * vii. All spots
     + b. Spot 
-        * i. Location
+        * i. Address (Location)
         * ii. Action
         * iii. Photo
         * iv. Title
