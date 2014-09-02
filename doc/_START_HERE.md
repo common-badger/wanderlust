@@ -2,9 +2,9 @@ Here's the on-boarding starter so you can be productive on your first day.
 
 ### The seed ###
 
-We used the yeoman generator [generator-angular-fullstack] which creates a MEAN stack application: MongoDB, Express, AngularJS, and Node. Try running "yo angular-fullstack" in a clean directory to build a reference of the stub file structure for comparison. Every file we touch will have a standard comment header indicating it's been modified from the seed.
+We used the yeoman generator [generator-angular-fullstack] which creates a MEAN stack application: MongoDB, Express, AngularJS, and Node. Try running "yo angular-fullstack" in a clean directory to build a reference of the stub file structure for comparison. Every file we make significant changes to will have a standard comment header indicating it's been modified from the seed.
 
-XTRA CREDIT: Joel Cox (Hack Reactor HIR alum of HR15) made an alternate to angular-fullstack generator. He can explain why his is better. Ask him. [generator-soa](https://www.npmjs.org/package/generator-soa). It creates the same back end code, but organizes the front end along a better architecture. Just leave it as-is unless you're feeling ambitious.
+EXTRA CREDIT: Joel Cox (Hack Reactor HIR alum of HR15) made an alternate to angular-fullstack generator. He can explain why his is better. Ask him. [generator-soa](https://www.npmjs.org/package/generator-soa). It creates the same back end architecture, but organizes the front end along better practices. Just leave the structure as-is unless you're feeling ambitious.
 
 ### The task manager ###
 
@@ -17,9 +17,11 @@ Executing “grunt serve” on the command line will:
   4. Run jslint
   5. Run all tests (will abort on failed tests)
 
-Any errors on the “grunt serve” command (outside of tests) are most likely caused by another instance of the server running. So make sure to terminate any additional servers via activity monitor. 
+Any errors on the “grunt serve” command (outside of tests) are most likely caused by another instance of the server running, so make sure to terminate any additional servers via activity monitor or "ps -ax | grep node".
 
 Mongo must be running for “grunt serve” to work. You can run Mongo by executing “mongod” in the background. 
+
+$ grunt test:server will run the test on the server side over a new clean database instance.
 
 ### Test Driven Development ###
 

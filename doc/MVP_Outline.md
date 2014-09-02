@@ -32,26 +32,27 @@
   + Instagram
   + Point system
   + Tour map
+  + Tour.geobox: {nwLon:num , nwLat:num , swLon:num , swLat:num }
 
 ## APP OVERVIEW ##
 
   1. Splash Page (enter location)
   2. Visit A Tour (sorted by rating/nearby) – this can be pre-populated
     + a. Tour 
-        * i. Title
-        * ii. Author
-        * iii. Description
-        * iv. Rating
-        * v. Area
-        * vi. Time
-        * vii. All spots
+        * i. title (short string 60 chars, naming the tour)
+        * ii. author (user ID)
+        * iii. description (short paragraph describing the tour 500 char)
+        * iv. rating (numeric in range 0.0 ... 5.0)
+        * v. city (string 60 chars)
+        * vi. duration (typical time needed to complete the tour)
+        * vii. all spots (array of spot IDs)
     + b. Spot 
-        * i. Address (Location)
-        * ii. Action
-        * iii. Photo
-        * iv. Title
-        * v. Tag
-        * vi. Longitude/latitude 
+        * i. address (short string containing human-readable "where to find it")
+        * ii. action (short paragraph describing what to do when you find it. 500 char)
+        * iii. photo (file name of the canonical photo of the spot)
+        * iv. title (short string 60 chars, naming the spot)
+        * v. tags (array of strings)
+        * vi. geo ({'lon':num , 'lat':num })
     + c. Embark! Call to action
         * i. Pre-populate first location into map
   3. Create a tour (log in gated)
