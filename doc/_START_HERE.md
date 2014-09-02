@@ -1,4 +1,14 @@
-Here's the on-boarding starter so you can be productive on your first day.
+# Wanderlust On-Boarding Tour
+
+This document is its own Wanderlust tour through our codebase.
+
+We want any new team to pick up this project and be productive in the first hour and the first day.
+
+## Test-driven development
+
+We believe in TDD. It makes it makes development more fun, safe, and effective. So hack away!
+
+We're using the Jasmine testing framework for the front end and Mocha for the server side. We followed test-driven development methods, so you can know right away whenever your changes break anything. Pay it forward by doing the same for the next team. Write tests before you write the code that makes it pass. And write tough tests that treat the API as roughly as it might actually be treated, so you can be sure you have a good safety alert system. When you find a bug, early or late in the process, write tests that catch that bug before you fix it. Code that's meant to be run only by your own code doesn't need to do parameter type checking unless you think your code might pass defective types.
 
 ## The seed
 
@@ -23,15 +33,11 @@ Mongo must be running for “grunt serve” to work. You can run Mongo by execut
 
 $ grunt test:server will run the test on the server side over a new clean database instance.
 
-## Test-driven development
-
-We're using the Jasmine testing framework for the front end and Mocha for the server side. We followed test-driven development methods, so you can know right away whenever your changes break anything. Pay it forward by doing the same for the next team. Write tests before you write the code that makes it pass. And write tough tests that treat the API as roughly as it might actually be treated, so you can be sure you have a good safety alert system. When you find a bug, early or late in the process, write tests that catch that bug before you fix it. Code that's meant to be run only by your own code doesn't need to do parameter type checking unless you think your code might pass defective types.
-
 ## Features overview
 
   1. Splash Page (enter location)
   2. Visit A Tour (sorted by rating/nearby) – this can be pre-populated
-    + a. Tour 
+    + a. Tour
         * i. title (short string 60 chars, naming the tour)
         * ii. author (user ID)
         * iii. description (short paragraph describing the tour 500 char)
@@ -39,7 +45,7 @@ We're using the Jasmine testing framework for the front end and Mocha for the se
         * v. city (string 60 chars)
         * vi. duration (typical time needed to complete the tour)
         * vii. all spots (array of spot IDs)
-    + b. Spot 
+    + b. Spot
         * i. address (short string containing human-readable "where to find it")
         * ii. action (short paragraph describing what to do when you find it. 500 char)
         * iii. photo (file name of the canonical photo of the spot)
@@ -128,6 +134,6 @@ Some possible future requests:
   "show me the spots I've visited"
   "bookmark this tour for later"
   "mark this tour as thematically similar to that tour"
-  "personal addendum of spots to an existing tour"
+  "add my personal addendum of spots to this tour"
   "declare that a spot is a duplicate of another spot"
-  "show me some tours with this spot in it"
+  "show me some tours that contain this spot"
