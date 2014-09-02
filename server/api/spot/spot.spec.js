@@ -14,6 +14,7 @@ describe('GET /api/spots', function() {
       .end(function(err, res) {
         if (err) return done(err);
         res.body.should.be.instanceof(Array);
+        
         done();
       });
   });
