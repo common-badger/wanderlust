@@ -95,10 +95,10 @@ describe('GET /api/tours/:id',function(){
   });
 });
 
-describe('POST /api/tours/:id', function(){
+describe('POST /api/tours/:id/rating', function(){
   it('should be able to add a review to a tour', function(done){
     request(app)
-    .post('/api/tours/'+tour2._id+'rating')
+    .post('/api/tours/'+ tour2._id + '/rating')
     .send({body:'awesome',rating:5})
     .expect(201)
     .end(function(err,res){
@@ -106,7 +106,7 @@ describe('POST /api/tours/:id', function(){
       Tour.findById(tour2._id,function(err,tour){
         tour.reviews.length.should.equal(1);
         done();
-      })
-    })
-  })
-})
+      });
+    });
+  });
+});
