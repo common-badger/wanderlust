@@ -57,9 +57,7 @@ exports.destroy = function(req, res) {
 
 //Adds a review to a tour
 exports.addReview = function(req,res) {
-  console.log('----------------------');
   if(req.body._id) {delete req.body._id;}
-  console.log('+++++++++',req.params.id);
   Tour.findByIdAndUpdate(req.params.id,{$push:{reviews:req.body}},function(err,tour){
     if(err) {return handleError(res,err);}
     if(!tour) {return res.send(404);}
