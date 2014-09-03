@@ -4,5 +4,5 @@ var median = function(numAr){
   sortedAr = numAr.sort( function(a, b) {return +a-b;} );
   midI = sortedAr.length/2;
   midFl = Math.floor(midI);
-  return (midI===midFl) numAr[midFl] : (numAr[midFl]+numAr[Math.ceil(midI)])/2 ;
+  return (midI===midFl) ? numAr[midFl] : (numAr[midFl]+numAr[Math.ceil(midI)])/2 ;
 };

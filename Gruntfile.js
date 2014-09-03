@@ -73,6 +73,13 @@ module.exports = function (grunt) {
         files: ['server/**/*.spec.js'],
         tasks: ['env:test', 'mochaTest']
       },
+
+      // Watch for changes in utils/ directory
+      utilsTest: {
+        files: ['utils/*.js'],
+        tasks: ['env:test', 'mochaTest']
+      },
+
       jsTest: {
         files: [
           '<%= yeoman.client %>/{app,components}/**/*.spec.js',
