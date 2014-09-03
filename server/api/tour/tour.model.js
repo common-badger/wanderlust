@@ -16,14 +16,17 @@ var titleValidate = [
 ];
 
 var cities = 'San Francisco,New York,Los Angelous'.split(',');
+var themes = 'Romantic,Athletic,Ourdoor,Nature,Art,Music,Food,Social,Solitary,Adventure,Urban,Daytime,Nighttime'.split(',');
 
 var TourSchema = new Schema({
   title: {type:String, unique:true, required:true, validate:titleValidate, trim:true},
   author: {type: Schema.ObjectId, ref: User},
   description: String,
   reviews: [{body: String, rating: {type:Number, max:5, min:0}}],
-  city: {type:String,enum: cities},
-  duration: String,
+  city: {type:String, enum: cities},
+  duration: Number,
+  theme: [{type:String, enum: themes}],
+  neighborhood: [String],
   spots: [{type: Schema.ObjectId, ref: Spot}] 
 });
 
