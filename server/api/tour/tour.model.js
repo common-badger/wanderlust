@@ -9,9 +9,9 @@ var mongoose = require('mongoose'),
 
 var titleValidate = [
   validate({
-  	validator: 'isLength',
-  	arguments: [0,50],
-  	message: 'title should be less than 50 characters'
+    validator: 'isLength',
+    arguments: [0,50],
+    message: 'title should be less than 50 characters'
   })
 ];
 
@@ -27,7 +27,7 @@ var TourSchema = new Schema({
   duration: Number,
   theme: [{type:String, enum: themes}],
   neighborhood: [String],
-  spots: [{type: Schema.ObjectId, ref: Spot}] 
+  spots: [{type: Schema.ObjectId, ref: Spot}]
 });
 
 TourSchema
