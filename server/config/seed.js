@@ -35,14 +35,18 @@ Tour.find({}).remove(function() {
       description: 'dig out the places to eat around Hack Reactor',
       reviews:[{body:'good',rating:4},{body:'okay',rating:3}],
       city: 'San Francisco',
-      duration: 'one-day'
+      duration: 600,
+      theme: ['Romantic'],
+      neighborhood: ['Mission']
     },{
       title: 'Wonderful Sunset',
       author: user._id,
       description: 'find out the good hiking place hidden here',
       reviews:[{body:'This is awesome!', rating: 5}],
       city: 'San Francisco',
-      duration: 'one-day'
+      duration: 600,
+      theme: ['Nighttime'],
+      neighborhood: ['Sunset']
     }]);
   })
 });

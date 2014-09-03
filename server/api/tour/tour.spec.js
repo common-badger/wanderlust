@@ -34,7 +34,9 @@ var tour1 = new Tour({
   description: 'dig out the places to eat around Hack Reactor',
   reviews:[{body:'good',rating:4},{body:'okay',rating:3}],
   city: 'San Francisco',
-  duration: 'one-day',
+  duration: 600,
+  theme: ['Romantic'],
+  neighborhood: ['Mission'],
   spots: [spot1._id, spot2._id]
 });
 
