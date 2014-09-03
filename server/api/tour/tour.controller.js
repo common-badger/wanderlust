@@ -13,6 +13,7 @@ exports.index = function(req, res) {
 
 // Get a single tour
 exports.show = function(req, res) {
+  console.log("entered show");
   Tour.findById(req.params.id, function (err, tour) {
     if(err) { return handleError(res, err); }
     if(!tour) { return res.send(404); }
@@ -51,6 +52,16 @@ exports.destroy = function(req, res) {
       if(err) { return handleError(res, err); }
       return res.send(204);
     });
+  });
+};
+
+//Adds a review to a tour
+exports.addReview = function(req,res) {
+  if(req.body._id) {delete req.body._id;}
+  Tour.findByIdAndUpdate(req.params.id,{$push:{reviews:req.body}},function(err,tour){
+    if(err) {return handleError(res,err);}
+    if(!tour) {return res.send(404);}
+    res.send(201);
   });
 };
 
