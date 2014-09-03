@@ -44,6 +44,10 @@ TourSchema
     };
   });
 
+TourSchema.method('findAuthor',function(callback){
+  return this.db.model('User').findById(this.author,callback);
+});
+
 // TourSchema.method('addReviews',function(review,cb){
 //   this.reviews.push(review);
 //   console.log('********',this.reviews);

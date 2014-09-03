@@ -13,6 +13,7 @@ exports.index = function(req, res) {
 
 // Get a single tour
 exports.show = function(req, res) {
+  console.log("entered show");
   Tour.findById(req.params.id, function (err, tour) {
     if(err) { return handleError(res, err); }
     if(!tour) { return res.send(404); }
