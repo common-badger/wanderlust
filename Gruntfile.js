@@ -567,6 +567,15 @@ module.exports = function (grunt) {
       ]);
     }
 
+    // Test the utils/ directory.
+    if (target === 'utils') {
+      return grunt.task.run([
+        'env:all',
+        'env:test',
+        'mochaTest'
+      ]);
+    }
+
     else if (target === 'e2e') {
       return grunt.task.run([
         'clean:server',
@@ -582,6 +591,7 @@ module.exports = function (grunt) {
     }
 
     else grunt.task.run([
+      'test:utils',
       'test:server',
       'test:client'
     ]);

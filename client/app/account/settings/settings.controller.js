@@ -17,5 +17,5 @@ angular.module('wanderlustApp')
           $scope.message = '';
         });
       }
-		};
+    };
   });
