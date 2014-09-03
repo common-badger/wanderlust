@@ -4,7 +4,8 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema,
     validate = require('mongoose-validator'),
     Spot = require('../spot/spot.model.js'),
-    User = require('../user/user.model.js');
+    User = require('../user/user.model.js'),
+    uniqueValidator = require('mongoose-unique-validator');
 
 var titleValidate = [
   validate({
@@ -31,7 +32,7 @@ TourSchema
   .get(function(){
     var sum = 0;
     for(var i = 0; i < this.reviews.length; i++){
-      sum += this.reviews.rating;
+      sum += this.reviews[i].rating;
     }
 
     return{
@@ -39,14 +40,13 @@ TourSchema
       'author': this.author,
       'description': this.description,
       'rating': sum/this.reviews.length,
-      'duration' this.duration
+      'duration': this.duration
     };
   });
 
-TourSchema
-  .virtual('reviews')
-  .set(function(review){
-    this.reviews.push(review);
-  });
+TourSchema.method('addReviews',function(review){
+  this.reviews.push(review);
+})
+// TourSchema.plugin(uniqueValidator);
 
 module.exports = mongoose.model('Tour', TourSchema);
