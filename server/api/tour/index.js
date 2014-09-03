@@ -12,4 +12,5 @@ router.post('/', controller.create);
 // router.patch('/:id', controller.update);
 // router.delete('/:id', controller.destroy);
 
+router.post('/:id/rating',controller.addReview);
 module.exports = router;

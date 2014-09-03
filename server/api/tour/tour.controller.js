@@ -56,16 +56,16 @@ exports.destroy = function(req, res) {
 };
 
 //Adds a review to a tour
-// exports.addReview = function(req,res) {
-//   console.log('----------------------');
-//   if(req.body._id) {delete req.body._id;}
-//   console.log('+++++++++',req.params.id);
-//   Tour.findByIdAndUpdate(req.params.id,{$push:{reviews:req.body}},function(err,tour){
-//     if(err) {return handleError(res,err);}
-//     if(!tour) {return res.send(404);}
-//     res.send(201);
-//   });
-// };
+exports.addReview = function(req,res) {
+  console.log('----------------------');
+  if(req.body._id) {delete req.body._id;}
+  console.log('+++++++++',req.params.id);
+  Tour.findByIdAndUpdate(req.params.id,{$push:{reviews:req.body}},function(err,tour){
+    if(err) {return handleError(res,err);}
+    if(!tour) {return res.send(404);}
+    res.send(201);
+  });
+};
 
 function handleError(res, err) {
   return res.send(500, err);
