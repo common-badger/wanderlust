@@ -38,15 +38,15 @@ brew install node
 brew install mongoDB
 ```
 
-<b>Step 2:</b> Navigate to your work directory
-<b>Step 3:</b> Clone wanderlust repo and cd into it
+<b>Step 2:</b> Navigate to your work directory<br>
+<b>Step 3:</b> Clone wanderlust repo and cd into it<br>
 <b>Step 4:</b> Install npm and bower dependencies
 ```sh
 npm install
 bower install
 ```
 
-<b>Step 5:</b> Run mongod in a new terminal window
+<b>Step 5:</b> Run mongod in a new terminal window (see the Troubleshooting section below if you have encounter problems)
 ```sh
 mongod
 ```
@@ -57,7 +57,21 @@ grunt serve
 ```
 
 <b>Step 7:</b> Start hacking!
-<b>More Step 7:</b> Read doc/\_START\_HERE.md for more detailed on-boarding.
+
+For additional information read the [doc/\_START\_HERE.md] (doc/_START_HERE.md) for more detailed on-boarding.
+
+### Troubleshooting 
+
+A frequently occurring error when running mongod was 
+```sh
+ERROR: dbpath (/data/db) does not exist.
+```
+
+To fix this issue run the following command:
+```sh
+sudo mkdir -p /data/db
+```
+This should resolve the issue and allow you to run mongod in the command line.
 
 ### Roadmap
 
