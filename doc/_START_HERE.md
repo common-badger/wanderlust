@@ -110,8 +110,8 @@ $ grunt test:server will run the test on the server side over a new clean databa
 | api/tours/              | index of tours    | create new tour      |                 |              |
 | api/tours/:city_name    | index a city      |                      |                 |              |
 | api/tours/:id           | tour details      |                      | modify tour     | delete tour  |
-| api/spots/:id/rating    |                   | give opinion         |                 |              |
-| api/tours/:id/rating    |                   | give opinion         |                 |              |
+| api/spots/:id/rating    |                   | record opinion       |                 |              |
+| api/tours/:id/rating    |                   | record opinion       |                 |              |
 | api/tours/:id/duration  |                   | report time taken    |                 |              |
 | api/spots/:id/cost      |                   | report money spent   |                 |              |
 | api/tours/:id/cost      |                   | report money spent   |                 |              |
@@ -121,14 +121,14 @@ $ grunt test:server will run the test on the server side over a new clean databa
 | api/tours/:id/tags      |                   | new tag(s) for tour  |                 |              |
 
 \* admin-only functionality
-
 There will be URL query strings at the end of some of these as well. We haven't worked it out yet.
+PATCH requests are often served with the same functionality as PUT requests.
 
-Possibly saving incomplete tours would be in the MVP+:
+Possibly saving incomplete tours would be in MVP+:
 api/tours/develop/:tour_id/spots/:spot_id   POST: associate a spot to a tour as it is being built
 api/tours/develop/:tour_id/publish          POST: tour is ready. Publish it.
 
-Some possible future requests:
+Some possible future server requests:
   "save my half-created tour"
   "show me the tours I authored"
   "show me the spots I've visited"
