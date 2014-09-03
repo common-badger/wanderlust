@@ -2,9 +2,12 @@
 
 var chai = require('chai');
 var should = chai.Should();
+var Promise = require('bluebird');
+// var Tour = Promise.promisifyAll(require('./tour.model'));
 var Tour = require('./tour.model');
 var User = require('../user/user.model');
 var Spot = require('../spot/spot.model');
+
 
 
 var user = new User({
@@ -85,12 +88,23 @@ describe('Tour Model',function(){
   	});
   });
 
-  it('should be able to add reviews', function(done){
-  	tour.save(function(err,data){
-  	  data.addReviews({body:'soso',rating:2});
-  	  data.reviews.length.should.equal(3);
-  	  done();
-  	});
-  });
+  // it('should be able to add reviews', function(done){
+  //   tour.save(function(err,data){
+  //     data.addReviews({body:'soso',rating:2},function(err,data){
+  //       data.reviews.length.should.equal(3);
+  //       done();
+  //     });
+  //   });
+  // });
+
+
+  // it('should be able to add spots', function(done){
+  //   tour.save(function(err,data){
+  //     var newSpot = new Spot({name:'bbq'});
+  //     // data.addSpotAsync(newSpot)
+  //     //     .then(data.spots.length.should.equal(3));
+  //     done();
+  //   });
+  // });
 });
 
