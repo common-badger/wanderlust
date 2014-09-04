@@ -23,6 +23,13 @@ var SpotSchema = new Schema({
   reviews: [{ text:String, star:{type:Number,max:5,min:0} }],     // array of opinions
   tags: [String, enum:tags],          // tags are objective attributes; themese are subjective
   geo: { lon:{type:Number,min:-180,max:180} , lat:{type:Number,min:-90,max:90} }
+
+
+  task (achievement) (title, city, description, action, duration, reviews)
+  points integer
+  
+
+
 });
 
 SpotSchema
