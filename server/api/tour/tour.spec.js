@@ -47,6 +47,7 @@ var tour2 = new Tour({
 });
 
 beforeEach(function(done){
+  Spot.remove().exec();
   Tour.remove().exec().then(function(){
     Tour.create(tour1,tour2,function(err){
       if(err) done(err);
@@ -70,6 +71,49 @@ describe('GET /api/tours', function() {
   });
 });
 
+describe('GET /api/tours/cities/:city_name', function(){
+
+  it('should respond with 200', function(done){
+    request(app)
+      .get('/api/tours/San-Francisco')
+      .expect(200)
+      .end(function(err,res){
+        if(err) return done(err);
+        done();
+      });
+  });
+
+  it('should respond with tours around the city requested', function(done){
+    Tour.create({title: 'Football', city: 'Columbus'})
+    .then(function(){
+      request(app)
+        .get('/api/tours/Columbus')
+        .expect(200)
+        .end(function(err,res){
+          if(err) return done(err);
+          res.body.length.should.equal(1);
+          done();
+        });  
+    });
+  });
+});
+
+describe('GET /api/tours/:city_name/:id',function(){
+  it('should be able to get a tour with associated spots by id', function(done){
+    Spot.create([spot1,spot2])
+    .then(function(spots,sef){
+      request(app)
+      .get('/api/tours/San-Francisco/' + tour1._id)
+      .end(function(err,res){
+        res.body.should.have.property('tour');
+        res.body.should.have.property('spots');
+        done();
+      });      
+    });
+  });
+});
+
+
 describe('POST /api/tours', function(){
   it('should be able to create a new tour', function(done){
     request(app)
@@ -82,33 +126,23 @@ describe('POST /api/tours', function(){
           tours.length.should.equal(3);
           done();
         });
-      })
+      });
   });
 });
 
-describe('GET /api/tours/:id',function(){
-  it('should be able to get a tour by id', function(done){
-    request(app)
-    .get('/api/tours/' + tour1._id)
-    .end(function(err,res){
-      res.body.title.should.equal(tour1.title);
-      done();
-    });
-  });
-});
 
 describe('POST /api/tours/:id/rating', function(){
   it('should be able to add a review to a tour', function(done){
     request(app)
-    .post('/api/tours/'+ tour2._id + '/rating')
-    .send({body:'awesome',rating:5})
-    .expect(201)
-    .end(function(err,res){
-      if(err) return done(err);
-      Tour.findById(tour2._id,function(err,tour){
-        tour.reviews.length.should.equal(1);
-        done();
+      .post('/api/tours/'+ tour2._id + '/rating')
+      .send({body:'awesome',rating:5})
+      .expect(201)
+      .end(function(err,res){
+        if(err) return done(err);
+        Tour.findById(tour2._id,function(err,tour){
+          tour.reviews.length.should.equal(1);
+          done();
+        });
       });
-    });
   });
 });

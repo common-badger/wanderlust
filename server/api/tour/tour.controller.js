@@ -2,6 +2,7 @@
 
 var _ = require('lodash');
 var Tour = require('./tour.model');
+var Spot = require('../spot/spot.model');
 
 // Get list of tours
 exports.index = function(req, res) {
@@ -11,14 +12,23 @@ exports.index = function(req, res) {
   });
 };
 
+// Get tours around a city
+exports.byCity = function(req,res) {
+  Tour.find({city: req.params.city_name.replace('-',' ')}, function(err,tours){
+    if(err) {return handleError(res,err); }
+    return res.json(200,tours);
+  });
+};
+
 // Get a single tour
 exports.show = function(req, res) {
-  console.log("entered show");
-  Tour.findById(req.params.id, function (err, tour) {
-    if(err) { return handleError(res, err); }
-    if(!tour) { return res.send(404); }
-    return res.json(tour);
-  });
+  Tour.findById(req.params.id).exec()
+      .then(function(tour){
+        if(!tour) {return res.send(404);}
+        Spot.find({'_id': {$in: tour.spots}}, function(err,spots){
+          return res.json({tour:tour,spots:spots});
+        });
+      });
 };
 
 // Creates a new tour in the DB.
@@ -64,6 +74,7 @@ exports.addReview = function(req,res) {
     res.send(201);
   });
 };
+
 
 function handleError(res, err) {
   return res.send(500, err);
