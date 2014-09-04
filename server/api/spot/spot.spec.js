@@ -80,13 +80,15 @@ describe('Spot Model',function(){
 
 describe('Spot REST API', function(){
 
+// TODO: Add another level of describe for each API endpoint.
+
     beforeEach(function(done){
       Spot.remove().exec().then(function(){
         Spot.create(bikeMural, railwayMural, function(err){ err ? done(err) : done(); });
       });
     });
 
-    it('should respond to GET /api/spots with an array of spots', function(done) {
+    it('should give spots index for GET /api/spots with an array of spots', function(done) {
       request(app)
         .get('/api/spots')
         .expect(200)
@@ -99,135 +101,43 @@ describe('Spot REST API', function(){
         });
     });
 
-describe('POST /api/tours', function(){
-  it('should be able to create a new tour', function(done){
-    request(app)
-      .post('/api/tours')
-      .send({title:'the Bridge'})
-      .expect(201)
-      .end(function(err,res){
-        if (err) return done(err);
-        Tour.find(function(err,tours){
-          tours.length.should.equal(3);
-          done();
+    it('should create a new spot with POST /api/spots', function(done){
+      request(app)
+        .post('/api/spots')
+        .send({title:'the Bridge'})
+        .expect(201)
+        .end(function(err,res){
+          if (err) return done(err);
+          Spot.find(function(err, spots){
+            spots.length.should.equal(2);
+            done();
+          });
         });
-      })
-  });
-});
+    });
+
+    it('should give an individual spot for GET /api/spots/:id', function(done){
+      request(app)
+        .get('/api/spots/' + bikeMural._id)
+        .end(function(err,res){
+          res.body.title.should.equal(bikeMural.title);
+          done();
+      });
+    });
+
+    describe('POST /api/spots/:id/rating', function(){
+      it('should be able to add a review to a spot', function(done){
+        request(app)
+          .post('/api/spots/'+ railwayMural._id + '/rating')
+          .send({body:'Meh.',rating:2.5})
+          .expect(201)
+          .end(function(err,res){
+            if(err) return done(err);
+            Spot.findById(railwayMural._id,function(err,spot){
+              spot.reviews.length.should.equal(1);
+              done();
+            });
+          });
+      });
+    });
 
 }); // describe Spot REST API
-
-
-
-
-
-describe('GET /api/tours/:id',function(){
-  it('should be able to get a tour by id', function(done){
-    request(app)
-    .get('/api/tours/' + tour1._id)
-    .end(function(err,res){
-      res.body.title.should.equal(tour1.title);
-      done();
-    });
-  });
-});
-
-describe('POST /api/tours/:id/rating', function(){
-  it('should be able to add a review to a tour', function(done){
-    request(app)
-    .post('/api/tours/'+ tour2._id + '/rating')
-    .send({body:'awesome',rating:5})
-    .expect(201)
-    .end(function(err,res){
-      if(err) return done(err);
-      Tour.findById(tour2._id,function(err,tour){
-        tour.reviews.length.should.equal(1);
-        done();
-      });
-    });
-  });
-});
-
-
-
-
-
-
-
-
-
-
-describe('GET /api/spots', function() {
-  it('should respond with JSON array', function(done) {
-    request(app)
-      .get('/api/spots')
-      .expect(200)
-      .expect('Content-Type', /json/)
-      .end(function(err, res) {
-        if (err) return done(err);
-        res.body.should.be.instanceof(Array);
-        done();
-      });
-  });
-});
-
-describe('GET /api/spots', function() {
-
-  it('should respond with JSON array', function(done) {
-    request(app)
-      .get('/api/spots')
-      .expect(200)
-      .expect('Content-Type', /json/)
-      .end(function(err, res) {
-        if (err) return done(err);
-        res.body.should.be.instanceof(Array);
-        done();
-      });
-  });
-});
-
-
-
-
-describe('POST /api/tours', function(){
-  it('should be able to create a new tour', function(done){
-    request(app)
-      .post('/api/tours')
-      .send({title:'the Bridge'})
-      .expect(201)
-      .end(function(err,res){
-        if (err) return done(err);
-        Tour.find(function(err,tours){
-          tours.length.should.equal(3);
-          done();
-        });
-      })
-  });
-});
-
-describe('GET /api/tours/:id',function(){
-  it('should be able to get a tour by id', function(done){
-    request(app)
-    .get('/api/tours/' + tour1._id)
-    .end(function(err,res){
-      res.body.title.should.equal(tour1.title);
-      done();
-    });
-  });
-});
-
-describe('POST /api/tours/:id/rating', function(){
-  it('should be able to add a review to a tour', function(done){
-    request(app)
-    .post('/api/tours/'+ tour2._id + '/rating')
-    .send({body:'awesome',rating:5})
-    .expect(201)
-    .end(function(err,res){
-      if(err) return done(err);
-      Tour.findById(tour2._id,function(err,tour){
-        tour.reviews.length.should.equal(1);
-        done();
-      });
-    });
-  });
-});
