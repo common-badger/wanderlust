@@ -2,5 +2,17 @@
 
 angular.module('wanderlustApp')
   .controller('CreatetourCtrl', function ($scope) {
-    $scope.message = 'Hello';
+    $scope.spots = [{}];
+    $scope.tour = {
+      spots: $scope.spots
+    };
+
+    $scope.addSpot = function() {
+      $scope.spots.push({});
+    };
+
+    $scope.createTour = function() {
+      console.log($scope.tour);
+      console.log($scope.spots);
+    };
   });

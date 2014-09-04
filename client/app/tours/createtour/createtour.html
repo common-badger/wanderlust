@@ -1,3 +1,40 @@
-<div class="col-md-12">
-This is the createtour view.
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container">
+  <h1>Create a Tour</h1>
+
+  <!-- Tour details -->
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Tour details</h2>
+      Title: <input type="text" ng-model="tour.title" /><br />
+      Description: <input type="text" ng-model="tour.description" /><br />
+      <!-- Do this "the angular way" aka put in directive with more options -->
+      Duration: 
+      <select ng-model="tour.duration">
+        <option value="multiday">Many days</option>
+        <option value="one-day">All day</option>
+        <option value="half-day">Half day</option>
+        <option value="hour">Around an hour</option>
+      </select><br />
+      Neighborhood: 
+      <select ng-model="tour.neighborhood">
+        <option value="financial-district">Financial District</option>
+        <option value="mission">Mission</option>
+        <option value="downtown">Downtown</option>
+        <option value="marina">Marina</option>
+      </select><br />
+    </div>
+  </div>
+
+  <!-- Add spots by using wdl-spot directive, with spot attribute equal to spots[spotIndex] -->
+  <h2>Add spots</h2>
+  <div ng-repeat="spot in spots" class="container">
+    <wdl-spot spot="spots[$index]"></wdl-spot>
+  </div>
+  <!-- Buttons -->
+  <button ng-click="addSpot()">Add Spot</button>
+  <button ng-click="createTour()">Done!</button>
 </div>
+  
+  
