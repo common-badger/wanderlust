@@ -9,4 +9,3 @@ angular.module('wanderlustApp')
         controller: 'MainCtrl'
       });
   });
-  
