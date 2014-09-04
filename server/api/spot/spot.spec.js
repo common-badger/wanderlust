@@ -11,15 +11,15 @@ var bikeMural = new Spot({
   title: "Duboce Bikeway Mural",
   city: "San Francisco",
   address: "Church St & Duboce Ave",
-  photo: 'http://monacaron.com/sites/default/files/styles/gallery/public/DuboceBikewayMural4_MonaCaron.jpg?itok=tgkN3TBw' // FIXME: Get a local copy.
+  photo: 'http://monacaron.com/sites/default/files/styles/gallery/public/DuboceBikewayMural4_MonaCaron.jpg?itok=tgkN3TBw', // FIXME: Get a local copy.
   description:  "Mona Caron's first mural. It celebrates bicycling in the city of San Francisco."+
                 "Over a hundred meters in length and five meters tall. "+
                 "http://monacaron.com/murals/making-and-unveiling-duboce-bikeway-mural#sthash.uXs9to50.dpuf",
   action: "See if you can identify Mona and the other contributors depicted within the painting.",
   duration: 16.2,
   reviews: [
-    { text:"This mural makes me happy." star:4.5 },
-    { text:"This mural puts me into a rage." star:1.0 }
+    { text:"This mural makes me happy.", star:4.5 },
+    { text:"This mural puts me into a rage.", star:1.0 }
   ],
   tags: ['public art', 'outdoor', 'castro neighborhood'],
   geo: { lon:-122.428210 , lat:37.769457 }
@@ -29,11 +29,11 @@ var railwayMural = new Spot({
   title: "Market Street Railway Mural",
   city: "San Francisco",
   address: "300 Church Street",
-  photo: 'http://monacaron.com/sites/default/files/styles/bottom_gallery/public/mur-cat-HD-msrm-photo1_0.jpg?itok=Ohzm7urj'
-  description:  "A Mona Caron mural depcting San Francisco history from the 1920s to an imagined future."+
+  photo: 'http://monacaron.com/sites/default/files/styles/bottom_gallery/public/mur-cat-HD-msrm-photo1_0.jpg?itok=Ohzm7urj',
+  description:  "A Mona Caron mural depcting San Francisco history from the 1920s to an imagined future.",
   action: "See if you can identify Mona and the other contributors depicted in the painting.",
   duration: 7.2,
-  reviews: [{ text:"Great visual history of a great city." star:4.0 }],
+  reviews: [{ text:"Great visual history of a great city.", star:4.0 }],
   tags: ['public art', 'outdoor', 'castro neighborhood'],
   geo: { lon:-122.428482 , lat:37.766129 }
 });
@@ -61,7 +61,7 @@ describe('Spot Model',function(){
       should.exist(err);
       done();
     });
-    railwayMural.title = arigRailwayMuralTitle;
+    railwayMural.title = origRailwayMuralTitle;
   });
 
   it('should return the profile when called', function(done){
@@ -84,7 +84,10 @@ describe('Spot REST API', function(){
 
     beforeEach(function(done){
       Spot.remove().exec().then(function(){
-        Spot.create(bikeMural, railwayMural, function(err){ err ? done(err) : done(); });
+        Spot.create(bikeMural, railwayMural, function(err){
+          if(err) done(err);
+          done();
+        });
       });
     });
 
