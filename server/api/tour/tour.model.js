@@ -22,11 +22,12 @@ var TourSchema = new Schema({
   title: {type:String, unique:true, required:true, validate:titleValidate, trim:true},
   author: {type: Schema.ObjectId, ref: User},
   description: String,
-  reviews: [{body: String, rating: {type:Number, max:5, min:0}}],
+  reviews: [{body: String, rating: {type:Number, max:5, min:0}, reviewer: {type: Schema.ObjectId, ref: User}}],
   city: String,
   duration: Number,
   theme: [{type:String, enum: themes}],
   neighborhood: [String],
+  cost: Number,
   spots: [{type: Schema.ObjectId, ref: Spot}]
 });
 
