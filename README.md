@@ -5,8 +5,10 @@ Curate your city’s hidden gems for others to fall in love with or cure your wa
 ## Team
 
   - __Product Owner__: Dan Thareja
-  - __Scrum Master__: Park Tamaroon
+  - __Scrum Master__: Park Loqi Tamaroon
   - __Development Team Members__: Haiming Bao & Dominic Czarnota
+
+  Dedicated to Dan's Uncle FIXME, who inspired this project TODO ...
 
 ## Table of Contents
 
@@ -79,4 +81,4 @@ View the project roadmap [here](LINK_TO_PROJECT_ISSUES)
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
+See [doc/CONTRIBUTING.md](doc/CONTRIBUTING.md) for contribution guidelines.

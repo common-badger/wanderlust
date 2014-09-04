@@ -51,7 +51,7 @@ beforeEach(function(done){
     Tour.create(tour1,tour2,function(err){
       if(err) done(err);
       done();
-    })
+    });
   });
 });
 

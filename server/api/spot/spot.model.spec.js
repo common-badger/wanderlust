@@ -2,10 +2,19 @@
 
 var chai = require('chai');
 var should = chai.Should();
-var should = require('should');
-var app = require('../../app');
-var request = require('supertest');
 var Spot = require('./spot.model');
+
+
+//   title: {type:String, required:true, validate:titleValidate, trim:true}, // unique within a city
+//   city: {type:String, enum: cities},  // name of city or similarly sized localle - like a national park
+//   address: String,                    // human-readable: street address, or clear instructions to find
+//   photo: String,                      // file name of the canonical photo of the feature
+//   description: String,                // what is this spot and why do we want to visit it?
+//   action: String,                     // suggestion of a physical interaction to have with the object
+//   duration: Number,                   // Median time in minutes spent by other users at this spot
+//   reviews: [{ text:String, star:{type:Number,max:5,min:0} }],     // array of opinions
+//   tags: [String, enum:tags],          // tags are objective attributes; themese are subjective
+//   geo: { lon:{type:Number,min:-180,max:180} , lat:{type:Number,min:-90,max:90} }
 
 var bikeMural = new Spot({
   title: "Duboce Bikeway Mural",
@@ -15,7 +24,7 @@ var bikeMural = new Spot({
   description:  "Mona Caron's first mural. It celebrates bicycling in the city of San Francisco."+
                 "Over a hundred meters in length and five meters tall. "+
                 "http://monacaron.com/murals/making-and-unveiling-duboce-bikeway-mural#sthash.uXs9to50.dpuf",
-  action: "See if you can identify Mona and the other contributors depicted within the painting.",
+  action: "See if you can identify Mona and the other contributors depicted in the painting.",
   duration: 16.2,
   reviews: [
     { text:"This mural makes me happy.", star:4.5 },
@@ -38,11 +47,12 @@ var railwayMural = new Spot({
   geo: { lon:-122.428482 , lat:37.766129 }
 });
 
-
 describe('Spot Model',function(){
 
   beforeEach(function(done){
-    Spot.remove().exec().then(function(){ done(); });
+    Spot.remove().exec().then(function(){
+      done();
+    });
   });
 
   it('should save the data expected',function(done){
@@ -50,7 +60,7 @@ describe('Spot Model',function(){
       should.not.exist(err);
       should.exist(data);
       done();
-    });
+    })
   });
 
   it('should not save data with title bigger than 50 char',function(done){
@@ -76,71 +86,3 @@ describe('Spot Model',function(){
   });
 
 });
-
-
-describe('Spot REST API', function(){
-
-// TODO: Add another level of describe for each API endpoint.
-
-    beforeEach(function(done){
-      Spot.remove().exec().then(function(){
-        Spot.create(bikeMural, railwayMural, function(err){
-          if(err) done(err);
-          done();
-        });
-      });
-    });
-
-    it('should give spots index for GET /api/spots with an array of spots', function(done) {
-      request(app)
-        .get('/api/spots')
-        .expect(200)
-        .expect('Content-Type', /json/)
-        .end(function(err, res) {
-          if (err) return done(err);
-          res.body.should.be.instanceof(Array);
-          res.body.length.should.equal(2);
-          done();
-        });
-    });
-
-    it('should create a new spot with POST /api/spots', function(done){
-      request(app)
-        .post('/api/spots')
-        .send({title:'the Bridge'})
-        .expect(201)
-        .end(function(err,res){
-          if (err) return done(err);
-          Spot.find(function(err, spots){
-            spots.length.should.equal(2);
-            done();
-          });
-        });
-    });
-
-    it('should give an individual spot for GET /api/spots/:id', function(done){
-      request(app)
-        .get('/api/spots/' + bikeMural._id)
-        .end(function(err,res){
-          res.body.title.should.equal(bikeMural.title);
-          done();
-      });
-    });
-
-    describe('POST /api/spots/:id/rating', function(){
-      it('should be able to add a review to a spot', function(done){
-        request(app)
-          .post('/api/spots/'+ railwayMural._id + '/rating')
-          .send({body:'Meh.',rating:2.5})
-          .expect(201)
-          .end(function(err,res){
-            if(err) return done(err);
-            Spot.findById(railwayMural._id,function(err,spot){
-              spot.reviews.length.should.equal(1);
-              done();
-            });
-          });
-      });
-    });
-
-}); // describe Spot REST API
