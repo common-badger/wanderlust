@@ -1,3 +1,61 @@
-<div class="col-md-12">
-This is the createtour view.
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container">
+  <h1>Create a Tour</h1>
+
+  <!-- Tour details -->
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Tour details</h2>
+      Title: <input type="text" ng-model="tour.title" /><br />
+      Description: <input type="text" ng-model="tour.description" /><br />
+      <!-- Do this "the angular way" aka put in directive with more options -->
+      Duration: 
+      <select ng-model="tour.duration">
+        <option value="multiday">Many days</option>
+        <option value="one-day">All day</option>
+        <option value="half-day">Half day</option>
+        <option value="hour">Around an hour</option>
+      </select><br />
+      Neighborhood: 
+      <select ng-model="tour.neighborhood">
+        <option value="financial-district">Financial District</option>
+        <option value="mission">Mission</option>
+        <option value="downtown">Downtown</option>
+        <option value="marina">Marina</option>
+      </select><br />
+    </div>
+  </div>
+
+  <!-- Add a spot: make this a directive -->
+  <h2>Add spots</h2>
+  <wdl-spot spot="spots[0]"></wdl-spot>
+  <!-- <wdl-spot num="spots[1]"></wdl-spot> -->
+<!--   <div class="row spot">
+    <div class="col-md-12">
+      <h2>Add spots</h2>
+      <div class="col-md-3">
+        <label class="btn btn-primary" ng-model="spot.tag1" btn-checkbox>tag1</label>
+        <label class="btn btn-primary" ng-model="spot.tag2" btn-checkbox>tag2</label>
+        <label class="btn btn-primary" ng-model="spot.tag3" btn-checkbox>tag3</label>
+      </div>
+      <div class="col-md-4-offset-3">
+        Task: <input type="text" ng-model="spot.task" /><br />
+        Address: <input type="text" ng-model="spot.address" /><br />
+      </div>
+      <div class="col-md-3">
+        <select ng-model="spot.points">
+          <option value="5">Easy - 5</option>
+          <option value="10">Average - 10</option>
+          <option value="20">Hard - 20</option>
+        </select>
+      </div> 
+    </div>
+  </div> -->
+
+  <!-- Buttons -->
+  <button ng-click="showNewSpot()">Add Spot</button>
+  <button ng-click="createTour()">Done!</button>
 </div>
+  
+  

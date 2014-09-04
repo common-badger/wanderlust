@@ -1,0 +1,19 @@
+<div class="row spot">
+  <div class="col-md-12">
+    <div class="col-md-3">
+      <label class="btn btn-primary" ng-model="spot.free" btn-checkbox>Free</label>
+      <label class="btn btn-primary" ng-model="spot.paid" btn-checkbox>Paid</label>
+    </div>
+    <div class="col-md-4-offset-3">
+      Task: <input type="text" ng-model="spot.task" /><br />
+      Address: <input type="text" ng-model="spot.address" /><br />
+    </div>
+    <div class="col-md-3">
+      <select ng-model="spot.points">
+        <option value="5">Easy - 5</option>
+        <option value="10">Average - 10</option>
+        <option value="20">Hard - 20</option>
+      </select>
+    </div> 
+  </div>
+</div>
