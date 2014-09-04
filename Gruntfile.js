@@ -76,12 +76,6 @@ module.exports = function (grunt) {
         tasks: ['env:test', 'mochaTest']
       },
 
-      // Watch for changes in utils/ directory
-      utilsTest: {
-        files: ['utils/*.js'],
-        tasks: ['env:test', 'utilsTest']
-      },
-
       jsTest: {
         files: [
           '<%= yeoman.client %>/{app,components}/**/*.spec.js',
@@ -433,7 +427,7 @@ module.exports = function (grunt) {
       options: {
         reporter: 'spec'
       },
-      src: [ 'utils/*.spec.js' , 'server/**/*.spec.js' ]
+      src: [ 'server/**/*.spec.js' ]
     },
 
     protractor: {
@@ -556,11 +550,6 @@ module.exports = function (grunt) {
     grunt.task.run(['serve']);
   });
 
-
-grunt.registerTask('utilsTest', function(){
-  
-});
-
   grunt.registerTask('test', function(target) {
     if (target === 'server') {
       return grunt.task.run([
@@ -581,15 +570,6 @@ grunt.registerTask('utilsTest', function(){
       ]);
     }
 
-    // Test the utils/ directory.
-    else if (target === 'utils') {
-      return grunt.task.run([
-        'env:all',
-        'env:test',
-        'utilsTest'
-      ]);
-    }
-
     else if (target === 'e2e') {
       return grunt.task.run([
         'clean:server',
@@ -605,7 +585,6 @@ grunt.registerTask('utilsTest', function(){
     }
 
     else grunt.task.run([
-      'test:utils',
       'test:server',
       'test:client'
     ]);
