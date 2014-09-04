@@ -71,39 +71,12 @@ describe('GET /api/tours', function() {
   });
 });
 
-describe('GET /api/tours/cities/:city_name', function(){
-
-  it('should respond with 200', function(done){
-    request(app)
-      .get('/api/tours/San-Francisco')
-      .expect(200)
-      .end(function(err,res){
-        if(err) return done(err);
-        done();
-      });
-  });
-
-  it('should respond with tours around the city requested', function(done){
-    Tour.create({title: 'Football', city: 'Columbus'})
-    .then(function(){
-      request(app)
-        .get('/api/tours/Columbus')
-        .expect(200)
-        .end(function(err,res){
-          if(err) return done(err);
-          res.body.length.should.equal(1);
-          done();
-        });  
-    });
-  });
-});
-
-describe('GET /api/tours/:city_name/:id',function(){
+describe('GET /api/tours/:id',function(){
   it('should be able to get a tour with associated spots by id', function(done){
     Spot.create([spot1,spot2])
     .then(function(spots,sef){
       request(app)
-      .get('/api/tours/San-Francisco/' + tour1._id)
+      .get('/api/tours/' + tour1._id)
       .end(function(err,res){
         res.body.should.have.property('tour');
         res.body.should.have.property('spots');

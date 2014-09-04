@@ -12,14 +12,6 @@ exports.index = function(req, res) {
   });
 };
 
-// Get tours around a city
-exports.byCity = function(req,res) {
-  Tour.find({city: req.params.city_name.replace('-',' ')}, function(err,tours){
-    if(err) {return handleError(res,err); }
-    return res.json(200,tours);
-  });
-};
-
 // Get a single tour
 exports.show = function(req, res) {
   Tour.findById(req.params.id).exec()
