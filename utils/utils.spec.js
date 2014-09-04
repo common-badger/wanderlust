@@ -1,7 +1,7 @@
 var path = require('path');
 var expect = require('chai').expect;
 
-var stats = require(path.join(__dirname, './stats.js'));
+var stats = require(path.join(__dirname, './utils.js'));
 
 describe('stats.js ', function () {
   'use strict';

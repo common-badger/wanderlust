@@ -79,7 +79,7 @@ module.exports = function (grunt) {
       // Watch for changes in utils/ directory
       utilsTest: {
         files: ['utils/*.js'],
-        tasks: ['env:test', 'mochaTest']
+        tasks: ['env:test', 'utilsTest']
       },
 
       jsTest: {
@@ -433,7 +433,7 @@ module.exports = function (grunt) {
       options: {
         reporter: 'spec'
       },
-      src: ['server/**/*.spec.js']
+      src: [ 'utils/*.spec.js' , 'server/**/*.spec.js' ]
     },
 
     protractor: {
@@ -556,6 +556,11 @@ module.exports = function (grunt) {
     grunt.task.run(['serve']);
   });
 
+
+grunt.registerTask('utilsTest', function(){
+  
+});
+
   grunt.registerTask('test', function(target) {
     if (target === 'server') {
       return grunt.task.run([
@@ -577,11 +582,11 @@ module.exports = function (grunt) {
     }
 
     // Test the utils/ directory.
-    if (target === 'utils') {
+    else if (target === 'utils') {
       return grunt.task.run([
         'env:all',
         'env:test',
-        'mochaTest'
+        'utilsTest'
       ]);
     }
 

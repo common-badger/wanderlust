@@ -15,7 +15,7 @@ var bikeMural = new Spot({
   description:  "Mona Caron's first mural. It celebrates bicycling in the city of San Francisco."+
                 "Over a hundred meters in length and five meters tall. "+
                 "http://monacaron.com/murals/making-and-unveiling-duboce-bikeway-mural#sthash.uXs9to50.dpuf",
-  action: "See if you can identify Mona and the other contributors depicted in the painting.",
+  action: "See if you can identify Mona and the other contributors depicted within the painting.",
   duration: 16.2,
   reviews: [
     { text:"This mural makes me happy." star:4.5 },
