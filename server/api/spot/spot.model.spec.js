@@ -2,7 +2,7 @@
 
 var chai = require('chai');
 var should = chai.Should();
-var Tour = require('./spot.model');
+var Spot = require('./spot.model');
 
 
 //   title: {type:String, required:true, validate:titleValidate, trim:true}, // unique within a city
