@@ -31,7 +31,8 @@ Any errors on the “grunt serve” command (outside of tests) are most likely c
 
 Mongo must be running for “grunt serve” to work. You can run Mongo by executing “mongod” in the background. 
 
-$ grunt test:server will run the test on the server side over a new clean database instance.
+$ grunt test will run the whole test suite.
+$ grunt test:server will run the tests on the server side over a new clean database instance.
 
 ## Features overview
 

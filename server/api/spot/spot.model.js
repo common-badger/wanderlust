@@ -2,13 +2,22 @@
 
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
+    validate = require('mongoose-validator'),
+    User = require('../user/user.model.js'),
+    uniqueValidator = require('mongoose-unique-validator');
+
+// FIXME: Either DB or shared JS file.
+var cities = [
+  'San Francisco',
+  'New York'
+];
 
 var SpotSchema = new Schema({
   title: {type:String, required:true, validate:titleValidate, trim:true}, // unique within a city
   city: {type:String, enum: cities},  // name of city or similarly sized localle - like a national park
   address: String,                    // human-readable: street address, or clear instructions to find
   photo: String,                      // file name of the canonical photo of the feature
-  description: String,                // what is this thing and why do we want to visit it?
+  description: String,                // what is this spot and why do we want to visit it?
   action: String,                     // suggestion of a physical interaction to have with the object
   duration: Number,                   // Median time in minutes spent by other users at this spot
   reviews: [{ text:String, star:{type:Number,max:5,min:0} }],     // array of opinions
@@ -17,9 +26,15 @@ var SpotSchema = new Schema({
 });
 
 SpotSchema
-  .virtual('')
+  .virtual('profile')
   .get(function(){
-    var 
+    return {
+      title: this.title,
+      address: this.address,
+      description: this.description,
+      rating: median(_.pluck(this.reviews, star));
+      geo: this.geo
+    };
   });
 
 module.exports = mongoose.model('Spot', SpotSchema);

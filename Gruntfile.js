@@ -1,6 +1,8 @@
 // Generated on 2014-09-01 using generator-angular-fullstack 2.0.13
 'use strict';
 
+// TODO: fix or reject hard-tab intentation and trailing whitespace lines.
+
 module.exports = function (grunt) {
   var localConfig;
   try {
