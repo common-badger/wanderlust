@@ -1,0 +1,8 @@
+.row.spot {
+  border-style: solid;
+  border-color: #444;
+  border-width: 2px;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px 0px;
+}
