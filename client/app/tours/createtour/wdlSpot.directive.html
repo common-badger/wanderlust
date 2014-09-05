@@ -8,12 +8,17 @@
       Task: <input type="text" ng-model="spot.task" /><br />
       Address: <input type="text" ng-model="spot.address" /><br />
     </div>
+
+    <!-- Points -->
     <div class="col-md-3">
       <select ng-model="spot.points">
         <option value="5">Easy - 5</option>
         <option value="10">Average - 10</option>
         <option value="20">Hard - 20</option>
       </select>
-    </div> 
+    </div>
+
+    <!-- Picture upload -->
+  <input type="file" ng-file-select="onFileSelect($files)">
   </div>
 </div>

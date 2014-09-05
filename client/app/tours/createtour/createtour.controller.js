@@ -15,4 +15,5 @@ angular.module('wanderlustApp')
       console.log($scope.tour);
       console.log($scope.spots);
     };
+
   });
