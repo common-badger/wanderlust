@@ -30,12 +30,12 @@ User.find({}).remove(function() {
 Tour.find({}).remove(function() {
   User.find({name:'Test User'}, function(err,user){
     Tour.create([{
-      title: 'The Mission Mission',
+      title: 'The Market',
       author: user._id,
       description: 'dig out the places to eat around Hack Reactor',
       reviews:[{body:'good',rating:4},{body:'okay',rating:3}],
       city: 'San Francisco',
-      duration: 600,
+      duration: 'All day',
       theme: ['Romantic'],
       neighborhood: ['Mission']
     },{
@@ -44,7 +44,7 @@ Tour.find({}).remove(function() {
       description: 'find out the good hiking place hidden here',
       reviews:[{body:'This is awesome!', rating: 5}],
       city: 'San Francisco',
-      duration: 600,
+      duration: 'All day',
       theme: ['Nighttime'],
       neighborhood: ['Sunset']
     }]);

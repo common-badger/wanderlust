@@ -6,7 +6,6 @@ var Promise = require('bluebird');
 // var Tour = Promise.promisifyAll(require('./tour.model'));
 var Tour = require('./tour.model');
 var User = require('../user/user.model');
-var Spot = require('../spot/spot.model');
 
 
 
@@ -17,28 +16,17 @@ var user = new User({
   password: 'password'
 });
 
-var spot1 = new Spot({
-  name: 'the mall',
-  info: 'eat',
-  active: 'true'
-});
-
-var spot2 = new Spot({
-  name: 'subway',
-  info: 'lunch',
-  active: 'true'
-});
-
 var tour = new Tour({
   title: 'The Mission Mission',
   author: user._id,
   description: 'dig out the places to eat around Hack Reactor',
   reviews:[{body:'good',rating:4},{body:'okay',rating:3}],
   city: 'San Francisco',
-  duration: 600,
+  cost:'$$',
+  duration: 'All day',
   theme: ['Romantic'],
   neighborhood: ['Mission'],
-  spots: [spot1._id, spot2._id]
+  spots:[{task: 'take a pic', points: 5}, {task: 'get a sword', points: 10}]
 });
 
 describe('Tour Model',function(){

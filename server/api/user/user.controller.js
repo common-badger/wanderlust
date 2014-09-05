@@ -4,6 +4,7 @@ var User = require('./user.model');
 var passport = require('passport');
 var config = require('../../config/environment');
 var jwt = require('jsonwebtoken');
+var Tour = require('../tour/tour.model');
 
 var validationError = function(res, err) {
   return res.json(422, err);
@@ -92,6 +93,21 @@ exports.me = function(req, res, next) {
     res.json(user);
   });
 };
+
+/**
+ * Get the all the tours created by the current user
+ */
+
+exports.showTours = function(req, res, next) {
+
+  if(!req.user._id.equals(req.params.id)) {return res.send(401);}
+
+  Tour.find({author: req.params.id}, function(err, tours){
+    if(err) return next(err);
+    res.json(tours);
+  });
+};
+
 
 /**
  * Authentication callback
