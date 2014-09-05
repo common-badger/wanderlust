@@ -35,8 +35,8 @@
 }
 
 .map {
-  width: 100px;
-  height: 85px;
+  width: 200px;
+  height: 170px;
   float: left;
   padding: 5px;
 }
@@ -54,8 +54,8 @@
 .tourView {
   border: 1px solid #ABB7BF;
   border-spacing: 3px;
-  width: 250px;
-  height: 100px;
+  width: 350px;
+  height: 200px;
   display: inline-block;
 }
 
