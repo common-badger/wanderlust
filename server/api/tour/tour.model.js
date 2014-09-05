@@ -16,7 +16,7 @@ var titleValidate = [
 
 // var cities = 'San Francisco,New York,Los Angelous'.split(',');
 var themes = 'Romantic,Athletic,Ourdoor,Nature,Art,Music,Food,Social,Solitary,Adventure,Urban,Daytime,Nighttime'.split(',');
-var durations = 'More than a day,All day,Most of the day,Half day,Around an hour'.split(',');
+// var durations = 'More than a day,All day,Most of the day,Half day,Around an hour'.split(',');
 var costs = '$,$$,$$$,$$$$'.split(',');
 
 var TourSchema = new Schema({
@@ -25,16 +25,24 @@ var TourSchema = new Schema({
   description: String,
   reviews: [{body: String, rating: {type:Number, max:5, min:0}, reviewer: {type: Schema.ObjectId, ref: User}}],
   city: String,
-  duration: {type: String, enum: durations},
+  duration: {type: String},
   theme: [{type:String, enum: themes}],
   neighborhood: [String],
   cost: {type: String, enum: costs},
   createdAt: {type: Date, default: Date.now()},
   spots: [{
-    tags:[String],
+    // tags:[String],
+    free: Boolean,
+    paid: Boolean,
+    indoors: Boolean,
+    outdoors: Boolean,
+    photo: Boolean,
+    adventure: Boolean,
+    food: Boolean,
+    drink: Boolean,
     task: String,
     address: String,
-    points: Number,
+    points: String,
     imgurl: String
   }]
 });
