@@ -35,6 +35,7 @@ exports.update = function(req, res) {
   Tour.findById(req.params.id, function (err, tour) {
     if (err) { return handleError(res, err); }
     if(!tour) { return res.send(404); }
+    if(req.user._id !== tour.author) {return res.send(401);}
     var updated = _.merge(tour, req.body);
     updated.save(function (err) {
       if (err) { return handleError(res, err); }
@@ -48,6 +49,7 @@ exports.destroy = function(req, res) {
   Tour.findById(req.params.id, function (err, tour) {
     if(err) { return handleError(res, err); }
     if(!tour) { return res.send(404); }
+    if(req.user._id !== tour.author) {return res.send(401);}
     tour.remove(function(err) {
       if(err) { return handleError(res, err); }
       return res.send(204);
@@ -58,7 +60,9 @@ exports.destroy = function(req, res) {
 //Adds a review to a tour
 exports.addReview = function(req,res) {
   if(req.body._id) {delete req.body._id;}
-  Tour.findByIdAndUpdate(req.params.id,{$push:{reviews:req.body}},function(err,tour){
+  var reviewerID = {reviewer: req.user._id};
+  var review = _.merge(req.body, reviewerID);
+  Tour.findByIdAndUpdate(req.params.id,{$push:{reviews:review}},function(err,tour){
     if(err) {return handleError(res,err);}
     if(!tour) {return res.send(404);}
     res.send(201);

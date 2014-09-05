@@ -71,11 +71,35 @@ describe('GET /api/tours/:id',function(){
 
 
 describe('POST /api/tours', function(){
+  var token;
+
+  beforeEach(function(done){
+    User.create(user).then(function(){
+      request(app)
+        .post('/auth/local')
+        .send({
+          email: 'test@test.com',
+          password: 'password'
+        })
+        .expect(200)
+        .end(function(err,res){
+          token = res.body.token;
+          done();
+        })
+    });
+  });
+
+  afterEach(function(done){
+    User.remove().exec().then(function(){
+      done();
+    });
+  });
 
   it('should be able to create a new tour', function(done){
     request(app)
       .post('/api/tours')
       .send({title:'the Bridge'})
+      .set('authorization', 'Bearer ' + token)
       .expect(201)
       .end(function(err,res){
         if (err) return done(err);
@@ -85,21 +109,24 @@ describe('POST /api/tours', function(){
         });
       });
   });
-});
 
-
-describe('POST /api/tours/:id/rating', function(){
-  it('should be able to add a review to a tour', function(done){
+  it('should be able to add a review to a tour through /:id/rating', function(done){
     request(app)
       .post('/api/tours/'+ tour2._id + '/rating')
       .send({body:'awesome',rating:5})
+      .set('authorization', 'Bearer ' + token)
       .expect(201)
       .end(function(err,res){
         if(err) return done(err);
         Tour.findById(tour2._id,function(err,tour){
           tour.reviews.length.should.equal(1);
+          tour.reviews[0].reviewer.toString().should.equal(user._id.toString());
           done();
         });
       });
   });
+
+  
+
 });
+

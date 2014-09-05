@@ -37,44 +37,13 @@ var tour2 = new Tour({
 describe('GET /api/citys', function() {
 
   beforeEach(function(done){
-    User.create(user).then(function(){
-      Tour.remove().exec().then(function(){
-        Tour.create(tour1,tour2,function(err){
-          if(err) done(err);
-          done();
-        });  
-      });   
-    });
-  });
-
-  afterEach(function(done){
-    User.remove().exec().then(function(){
-      done();
-    });
-  });
-
-  it('should have a user', function(done){
-    User.find(function(err,user){
-      should.exist(user);
-      done();
-    })
-  });
-
-  it('should allow token to be requested', function(done){
-    request(app)
-      .post('/login')
-      .type('form')
-      .send({
-        email: 'test@test.com',
-        password: 'password' 
-      })
-      .expect(200)
-      .end(function(err,res){
-        console.log('---------',err);
-        console.log("+++++++",res.body);
+    Tour.remove().exec().then(function(){
+      Tour.create(tour1,tour2,function(err){
+        if(err) done(err);
         done();
-      });
-  })
+      });  
+    });   
+  });
 
   it('should respond with tours around the city requested', function(done){
     Tour.create({title: 'Football', city: 'Columbus'})
