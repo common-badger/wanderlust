@@ -29,6 +29,7 @@ var TourSchema = new Schema({
   theme: [{type:String, enum: themes}],
   neighborhood: [String],
   cost: {type: String, enum: costs},
+  createdAt: {type: Date, default: Date.now()},
   spots: [{
     tags:[String],
     task: String,

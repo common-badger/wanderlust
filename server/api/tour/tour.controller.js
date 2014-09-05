@@ -2,7 +2,6 @@
 
 var _ = require('lodash');
 var Tour = require('./tour.model');
-var Spot = require('../spot/spot.model');
 
 // Get list of tours
 exports.index = function(req, res) {
@@ -23,7 +22,8 @@ exports.show = function(req, res) {
 
 // Creates a new tour in the DB.
 exports.create = function(req, res) {
-  Tour.create(req.body, function(err, tour) {
+  var tourBody = _.merge(req.body,{author: req.user._id});
+  Tour.create(tourBody, function(err, tour) {
     if(err) { return handleError(res, err); }
     return res.json(201, tour);
   });
@@ -35,7 +35,7 @@ exports.update = function(req, res) {
   Tour.findById(req.params.id, function (err, tour) {
     if (err) { return handleError(res, err); }
     if(!tour) { return res.send(404); }
-    if(req.user._id !== tour.author) {return res.send(401);}
+    if(!tour.author.equals(req.user._id)) {return res.send(401);}
     var updated = _.merge(tour, req.body);
     updated.save(function (err) {
       if (err) { return handleError(res, err); }
@@ -49,7 +49,7 @@ exports.destroy = function(req, res) {
   Tour.findById(req.params.id, function (err, tour) {
     if(err) { return handleError(res, err); }
     if(!tour) { return res.send(404); }
-    if(req.user._id !== tour.author) {return res.send(401);}
+    if(!tour.author.equals(req.user._id)) {return res.send(401);}
     tour.remove(function(err) {
       if(err) { return handleError(res, err); }
       return res.send(204);

@@ -6,7 +6,6 @@ var Promise = require('bluebird');
 // var Tour = Promise.promisifyAll(require('./tour.model'));
 var Tour = require('./tour.model');
 var User = require('../user/user.model');
-var Spot = require('../spot/spot.model');
 
 
 
