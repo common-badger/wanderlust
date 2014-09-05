@@ -1,0 +1,65 @@
+.thing-form {
+  margin: 20px 0;
+}
+
+#banner {
+  border-bottom: none;
+  margin-top: -20px;
+}
+
+#banner h1 {
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: -1px;
+  text-align: left;
+}
+
+.hero-unit {
+  position: relative;
+  padding: 30px 15px;
+  color: #F5F5F5;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  background: #3B797F;
+}
+
+.footer {
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 70px;
+  border-top: 1px solid #E5E5E5;
+}
+
+.lead { 
+  font-size: 35px;
+}
+
+.map {
+  width: 100px;
+  height: 85px;
+  float: left;
+  padding: 5px;
+}
+
+.row {
+  border: 1px;
+  color: black;
+  text-align: center;
+}
+
+.container {
+  text-align: -webkit-center;
+}
+
+.tourView {
+  border: 1px solid #ABB7BF;
+  border-spacing: 3px;
+  width: 250px;
+  height: 100px;
+  display: inline-block;
+}
+
+.tourViewInfo {
+  text-align: left;
+}
+
