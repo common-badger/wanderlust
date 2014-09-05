@@ -35,7 +35,7 @@ var TourSchema = new Schema({
     task: String,
     address: String,
     points: Number,
-    photo: {data: Buffer, type: String}
+    imgurl: String
   }]
 });
 
