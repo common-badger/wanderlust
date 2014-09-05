@@ -1,3 +1,30 @@
-<div class="col-md-12">
-This is the showtour view.
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>{{tours.name}} - by {{tours.author}} - {{tours.length}}</h1>
+    <img class="map" src="assets/images/SF_Mission_map.png" alt="Mission District">
+    <p class="tour_header">{{tours.description}}</p>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+
+      <table class="table table-hover spotsContainer" ng-repeat="spot in tours.spots">
+        <tr>
+          <th class="spotNumber"> Spot {{spot.number}} </th>
+          <th class="spotInfo"> {{spot.info}} </th>
+          <th class="spotPoints"> {{spot.points}} </th>
+        </tr>
+      </table>
+
+  </div>
 </div>
+
+<footer class="footer">
+  <div class="container">
+    <button class="btn btn-default" type="button" ng-click="glhf()">Go Exploring!</button>
+  </div>
+</footer>
+
