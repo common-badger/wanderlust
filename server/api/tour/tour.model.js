@@ -15,7 +15,7 @@ var titleValidate = [
   })
 ];
 
-var cities = 'San Francisco,New York,Los Angelous'.split(',');
+var cities = 'San Francisco,New York,Los Angeles'.split(',');
 var themes = 'Romantic,Athletic,Ourdoor,Nature,Art,Music,Food,Social,Solitary,Adventure,Urban,Daytime,Nighttime'.split(',');
 
 var TourSchema = new Schema({
