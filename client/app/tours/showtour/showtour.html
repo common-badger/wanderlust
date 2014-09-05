@@ -13,7 +13,11 @@
 
       <table class="table table-hover spotsContainer" ng-repeat="spot in tours.spots">
         <tr>
-          <th class="spotNumber"> Spot {{spot.number}} </th>
+          <th>
+            <!-- the following three tags are directives from tours.controller.js -->
+            <tag-Price></tag-Price>
+            <tag-Camera></tag-Camera>
+            <tag-Tree></tag-Tree></th>
           <th class="spotInfo"> {{spot.info}} </th>
           <th class="spotPoints"> {{spot.points}} </th>
         </tr>

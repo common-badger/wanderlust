@@ -1,3 +1,122 @@
-<div class="col-md-12">
-This is the tours view.
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <p class="lead">Choose Your Adventure</p>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <p class="numberTours">8 tours near San Francisco</p>
+    </div>
+  </div>
 </div>
+
+<div class="container">
+
+    <div class="tourView" ng-click="selectedTour()">
+    <img class="map" src="assets/images/SF_Mission_map.png" alt="Mission District">
+    <div class="tourViewInfo">
+      <span> {{tours.name}} </span></br>
+      <span> {{tours.length}} </span></br>
+      <star-Rating></star-Rating>
+      <star-Rating></star-Rating>
+      <star-Rating></star-Rating>
+      <star-Rating></star-Rating>
+      <star-Rating></star-Rating><br>
+      <tag-Price></tag-Price>
+      <tag-Camera></tag-Camera>
+      <tag-Tree></tag-Tree>
+    </div>
+  </div>
+
+    <div class="tourView" ng-click="selectedTour()">
+    <img class="map" src="assets/images/SF_Mission_map.png" alt="Mission District">
+    <div class="tourViewInfo">
+      <span> {{tours.name}} </span></br>
+      <span> {{tours.length}} </span></br>
+      <star-Rating></star-Rating>
+      <star-Rating></star-Rating>
+      <star-Rating></star-Rating>
+      <star-Rating></star-Rating>
+      <star-Rating></star-Rating><br>
+      <tag-Price></tag-Price>
+      <tag-Camera></tag-Camera>
+      <tag-Tree></tag-Tree>
+    </div>
+  </div>
+
+    <div class="tourView" ng-click="selectedTour()">
+    <img class="map" src="assets/images/SF_Mission_map.png" alt="Mission District">
+    <div class="tourViewInfo">
+      <span> {{tours.name}} </span></br>
+      <span> {{tours.length}} </span></br>
+      <star-Rating></star-Rating>
+      <star-Rating></star-Rating>
+      <star-Rating></star-Rating>
+      <star-Rating></star-Rating>
+      <star-Rating></star-Rating><br>
+      <tag-Price></tag-Price>
+      <tag-Camera></tag-Camera>
+      <tag-Tree></tag-Tree>
+    </div>
+  </div>
+
+    <div class="tourView" ng-click="selectedTour()">
+    <img class="map" src="assets/images/SF_Mission_map.png" alt="Mission District">
+    <div class="tourViewInfo">
+      <span> {{tours.name}} </span></br>
+      <span> {{tours.length}} </span></br>
+      <star-Rating></star-Rating>
+      <star-Rating></star-Rating>
+      <star-Rating></star-Rating>
+      <star-Rating></star-Rating>
+      <star-Rating></star-Rating><br>
+      <tag-Price></tag-Price>
+      <tag-Camera></tag-Camera>
+      <tag-Tree></tag-Tree>
+    </div>
+  </div>
+
+    <div class="tourView" ng-click="selectedTour()">
+    <img class="map" src="assets/images/SF_Mission_map.png" alt="Mission District">
+    <div class="tourViewInfo">
+      <span> {{tours.name}} </span></br>
+      <span> {{tours.length}} </span></br>
+      <star-Rating></star-Rating>
+      <star-Rating></star-Rating>
+      <star-Rating></star-Rating>
+      <star-Rating></star-Rating>
+      <star-Rating></star-Rating><br>
+      <tag-Price></tag-Price>
+      <tag-Camera></tag-Camera>
+      <tag-Tree></tag-Tree>
+    </div>
+  </div>
+
+    <div class="tourView" ng-click="selectedTour()">
+    <img class="map" src="assets/images/SF_Mission_map.png" alt="Mission District">
+    <div class="tourViewInfo">
+      <span> {{tours.name}} </span></br>
+      <span> {{tours.length}} </span></br>
+      <star-Rating></star-Rating>
+      <star-Rating></star-Rating>
+      <star-Rating></star-Rating>
+      <star-Rating></star-Rating>
+      <star-Rating></star-Rating><br>
+      <tag-Price></tag-Price>
+      <tag-Camera></tag-Camera>
+      <tag-Tree></tag-Tree>
+    </div>
+  </div>
+
+</div>
+
+
+<footer class="footer">
+  <div class="container">
+    <a class="btn btn-default" type="button" href="#/tours/createtour">Create an Adventure</a>
+  </div>
+</footer>
