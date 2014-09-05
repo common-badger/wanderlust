@@ -94,7 +94,6 @@ describe('GET /api/user/:id/tours', function(){
         .set('authorization', 'Bearer ' + token)
         .expect(200)
         .end(function(err,res){
-          console.log('*********', res.body);
           res.body.length.should.equal(1);
           done();
         });
