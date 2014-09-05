@@ -11,7 +11,6 @@ module.exports = function(app) {
   // Insert routes below
   app.use('/api/city', require('./api/city'));
   app.use('/api/tours', require('./api/tour'));
-  app.use('/api/spots', require('./api/spot'));
   app.use('/api/users', require('./api/user'));
 
   app.use('/auth', require('./auth'));

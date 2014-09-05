@@ -3,7 +3,6 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema,
     validate = require('mongoose-validator'),
-    Spot = require('../spot/spot.model.js'),
     User = require('../user/user.model.js'),
     uniqueValidator = require('mongoose-unique-validator');
 
@@ -17,6 +16,8 @@ var titleValidate = [
 
 // var cities = 'San Francisco,New York,Los Angelous'.split(',');
 var themes = 'Romantic,Athletic,Ourdoor,Nature,Art,Music,Food,Social,Solitary,Adventure,Urban,Daytime,Nighttime'.split(',');
+var durations = 'More than a day,All day,Most of the day,Half day,Around an hour'.split(',');
+var costs = '$,$$,$$$,$$$$'.split(',');
 
 var TourSchema = new Schema({
   title: {type:String, unique:true, required:true, validate:titleValidate, trim:true},
@@ -24,11 +25,17 @@ var TourSchema = new Schema({
   description: String,
   reviews: [{body: String, rating: {type:Number, max:5, min:0}, reviewer: {type: Schema.ObjectId, ref: User}}],
   city: String,
-  duration: Number,
+  duration: {type: String, enum: durations},
   theme: [{type:String, enum: themes}],
   neighborhood: [String],
-  cost: Number,
-  spots: [{type: Schema.ObjectId, ref: Spot}]
+  cost: {type: String, enum: costs},
+  spots: [{
+    tags:[String],
+    task: String,
+    address: String,
+    points: Number,
+    photo: {data: Buffer, type: String}
+  }]
 });
 
 TourSchema

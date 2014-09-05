@@ -17,9 +17,7 @@ exports.show = function(req, res) {
   Tour.findById(req.params.id).exec()
       .then(function(tour){
         if(!tour) {return res.send(404);}
-        Spot.find({'_id': {$in: tour.spots}}, function(err,spots){
-          return res.json({tour:tour,spots:spots});
-        });
+        return res.json(200,tour);
       });
 };
 

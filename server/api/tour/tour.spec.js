@@ -6,7 +6,6 @@ var should = chai.Should();
 var app = require('../../app');
 var request = require('supertest');
 var User = require('../user/user.model');
-var Spot = require('../spot/spot.model');
 var Tour = require('./tour.model');
 
 var user = new User({
@@ -16,28 +15,17 @@ var user = new User({
   password: 'password'
 });
 
-var spot1 = new Spot({
-  name: 'the mall',
-  info: 'eat',
-  active: 'true'
-});
-
-var spot2 = new Spot({
-  name: 'subway',
-  info: 'lunch',
-  active: 'true'
-});
-
 var tour1 = new Tour({
   title: 'The Mission Mission',
   author: user._id,
   description: 'dig out the places to eat around Hack Reactor',
   reviews:[{body:'good',rating:4},{body:'okay',rating:3}],
   city: 'San Francisco',
-  duration: 600,
+  cost:'$$',
+  duration: 'All day',
   theme: ['Romantic'],
   neighborhood: ['Mission'],
-  spots: [spot1._id, spot2._id]
+  spots:[{task: 'take a pic', points: 5}, {task: 'get a sword', points: 10}]
 });
 
 var tour2 = new Tour({
@@ -47,7 +35,6 @@ var tour2 = new Tour({
 });
 
 beforeEach(function(done){
-  Spot.remove().exec();
   Tour.remove().exec().then(function(){
     Tour.create(tour1,tour2,function(err){
       if(err) done(err);
@@ -73,21 +60,18 @@ describe('GET /api/tours', function() {
 
 describe('GET /api/tours/:id',function(){
   it('should be able to get a tour with associated spots by id', function(done){
-    Spot.create([spot1,spot2])
-    .then(function(spots,sef){
-      request(app)
-      .get('/api/tours/' + tour1._id)
-      .end(function(err,res){
-        res.body.should.have.property('tour');
-        res.body.should.have.property('spots');
-        done();
-      });      
-    });
+    request(app)
+    .get('/api/tours/' + tour1._id)
+    .end(function(err,res){
+      res.body.title.should.have.equal('The Mission Mission');
+      done();
+    });      
   });
 });
 
 
 describe('POST /api/tours', function(){
+
   it('should be able to create a new tour', function(done){
     request(app)
       .post('/api/tours')

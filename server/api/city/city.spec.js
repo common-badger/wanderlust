@@ -5,7 +5,6 @@ var should = chai.Should();
 var app = require('../../app');
 var request = require('supertest');
 var User = require('../user/user.model');
-var Spot = require('../spot/spot.model');
 var Tour = require('../tour/tour.model');
 
 var user = new User({
@@ -15,28 +14,17 @@ var user = new User({
   password: 'password'
 });
 
-var spot1 = new Spot({
-  name: 'the mall',
-  info: 'eat',
-  active: 'true'
-});
-
-var spot2 = new Spot({
-  name: 'subway',
-  info: 'lunch',
-  active: 'true'
-});
-
 var tour1 = new Tour({
   title: 'The Mission Mission',
   author: user._id,
   description: 'dig out the places to eat around Hack Reactor',
   reviews:[{body:'good',rating:4},{body:'okay',rating:3}],
   city: 'San Francisco',
-  duration: 600,
+  cost:'$$',
+  duration: 'All day',
   theme: ['Romantic'],
   neighborhood: ['Mission'],
-  spots: [spot1._id, spot2._id]
+  spots:[{task: 'take a pic', points: 5}, {task: 'get a sword', points: 10}]
 });
 
 var tour2 = new Tour({
@@ -45,17 +33,49 @@ var tour2 = new Tour({
   city:'San Francisco'
 });
 
-beforeEach(function(done){
-  Spot.remove().exec();
-  Tour.remove().exec().then(function(){
-    Tour.create(tour1,tour2,function(err){
-      if(err) done(err);
+
+describe('GET /api/citys', function() {
+
+  beforeEach(function(done){
+    User.create(user).then(function(){
+      Tour.remove().exec().then(function(){
+        Tour.create(tour1,tour2,function(err){
+          if(err) done(err);
+          done();
+        });  
+      });   
+    });
+  });
+
+  afterEach(function(done){
+    User.remove().exec().then(function(){
       done();
     });
   });
-});
 
-describe('GET /api/citys', function() {
+  it('should have a user', function(done){
+    User.find(function(err,user){
+      should.exist(user);
+      done();
+    })
+  });
+
+  it('should allow token to be requested', function(done){
+    request(app)
+      .post('/login')
+      .type('form')
+      .send({
+        email: 'test@test.com',
+        password: 'password' 
+      })
+      .expect(200)
+      .end(function(err,res){
+        console.log('---------',err);
+        console.log("+++++++",res.body);
+        done();
+      });
+  })
+
   it('should respond with tours around the city requested', function(done){
     Tour.create({title: 'Football', city: 'Columbus'})
     .then(function(){
