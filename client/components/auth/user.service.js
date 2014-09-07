@@ -18,5 +18,5 @@ angular.module('wanderlustApp')
           id:'me'
         }
       }
-	  });
+    });
   });
