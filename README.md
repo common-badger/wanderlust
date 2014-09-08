@@ -8,7 +8,8 @@ Curate your city’s hidden gems for others to fall in love with or cure your wa
   - __Scrum Master__: Park Loqi Tamaroon
   - __Development Team Members__: Haiming Bao & Dominic Czarnota
 
-  Dedicated to Dan's Uncle FIXME, who inspired this project TODO ...
+  Dedicated to Justin Thareja, who welcomed his brother Dan to San Francisco with the
+  Mission Mission, the scavenger hunt that started it all.
 
 ## Table of Contents
 
