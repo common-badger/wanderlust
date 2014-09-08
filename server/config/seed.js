@@ -56,7 +56,7 @@ Tour.find({}).remove(function() {
       city: 'San Francisco',
       review: [{body: 'Cool!', rating: 4}],
       duration: 'Half day',
-      neighborhood: ['Sunset'],
+      neighborhood: ['Downtown'],
       spots: [{free: true, indoors: true, task: 'climb the big hill', address: '6th Street'}]
     },{
       title: 'Street Art Explorer',
@@ -65,7 +65,7 @@ Tour.find({}).remove(function() {
       city: 'San Francisco',
       review: [{body: 'Cool!', rating: 4}],
       duration: 'Half day',
-      neighborhood: ['Sunset'],
+      neighborhood: ['Lakeshore'],
       spots: [{free: true, indoors: true, task: 'climb the big hill', address: '6th Street'}]
     },{
       title: 'Grateful Dead Music Tour',
@@ -74,7 +74,7 @@ Tour.find({}).remove(function() {
       city: 'San Francisco',
       review: [{body: 'Cool!', rating: 4}],
       duration: 'Many days',
-      neighborhood: ['Sunset'],
+      neighborhood: ['Parkside'],
       spots: [{free: true, indoors: true, task: 'climb the big hill', address: '6th Street'}]
     },{
       title: 'Farmers\' Market Extravaganza',
@@ -83,7 +83,7 @@ Tour.find({}).remove(function() {
       city: 'San Francisco',
       review: [{body: 'Cool!', rating: 4}],
       duration: 'Around an hour',
-      neighborhood: ['Sunset'],
+      neighborhood: ['Tenderloin'],
       spots: [{free: true, indoors: true, task: 'climb the big hill', address: '6th Street'}]
     }]);
   })
