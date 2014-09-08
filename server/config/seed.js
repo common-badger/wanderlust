@@ -34,14 +34,18 @@ Tour.find({}).remove(function() {
       author: user._id,
       description: 'dig out the places to eat around Hack Reactor',
       city: 'San Francisco',
+      reviews: [{body: 'This is awesome!',rating:4},{body: 'good', rating: 3}],
       duration: 'All day',
       neighborhood: ['Mission'],
-      spots: [{free:true, outdoors: true, task: 'take a photo', address: '1 Market Street'}]
+      spots: [{free:true, outdoors: true, task: 'Obtain a wooden sword from a pirate shop', address: '1 Market Street', points: '10'},
+              {free:true, indoors: true, points: '5', task: 'Find the following graffiti'},
+              {indoors: true, points: '20', task: 'Catch Pikachu'}]
     },{
       title: 'Wonderful Sunset',
       author: user._id,
       description: 'find out the good hiking place hidden here',
       city: 'San Francisco',
+      review: [{body: 'Cool!', rating: 4}],
       duration: 'All day',
       neighborhood: ['Sunset'],
       spots: [{free: true, indoors: true, task: 'play basketball', address: '6th Street'}]
