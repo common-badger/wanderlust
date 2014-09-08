@@ -1,7 +1,12 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <p class="lead">Create your own tour</p>
+  </div>
+</header>
+
 <div class="container">
-  <h1>Create a Tour</h1>
   <!-- Tour details -->
   <div class="row">
     <div class="col-md-12">
@@ -11,7 +16,7 @@
             Tour details
           </div>
           <div class="panel-body">
-            <label>Title</label>
+            <label>Title*</label>
             <input class="form-control" type="text" ng-model="tour.title"><br>
             <label>Description</label>
             <input class="form-control" type="text" ng-model="tour.description"><br>
@@ -35,10 +40,15 @@
 
   <!-- Add spots by using wdl-spot directive, with spot attribute equal to spots[spotIndex] -->
   <h2>Add spots</h2>
-  <div ng-repeat="spot in spots" class="container">
-    <wdl-spot spot="spots[$index]"></wdl-spot>
+  <div class="row">
+    <div ng-repeat="spot in spots" class="col-md-4">
+      <wdl-spot spot="spots[$index]"></wdl-spot>
+    </div>
   </div>
+
   <!-- Buttons -->
-  <button ng-click="addSpot()">Add Spot</button>
-  <button ng-click="createTour()">Done!</button>
+  <div class="row buttons">
+    <button class="btn btn-default" ng-click="addSpot()">Add Spot</button>
+    <button class="btn btn-default" ng-click="createTour()">Done!</button>
+  </row>
 </div>

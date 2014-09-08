@@ -1,8 +1,26 @@
-.row.spot {
+#banner {
+  border-bottom: none;
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+
+.spot {
   border-style: solid;
   border-color: #444;
   border-width: 2px;
   border-radius: 10px;
   padding: 10px;
   margin: 10px 0px;
+}
+.buttons {
+  margin: 35px 0px;
+}
+
+.hero-unit {
+  position: relative;
+  padding: 30px 15px;
+  color: #F5F5F5;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  background: #3B797F;
 }

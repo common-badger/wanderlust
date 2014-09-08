@@ -13,6 +13,10 @@ angular.module('wanderlustApp')
     return {
       restrict: 'E',
       controller: function($scope, $upload) {
+        // Define tags
+        $scope.tags = ['free', 'paid', 'indoors', 'outside', 'photograph', 'adventure', 'food', 'drink'];
+
+        // Add upload pictures to imgur
         $scope.onFileSelect = function($files) {
           //$files: an array of files selected, each file has name, size, and type.
           for (var i = 0; i < $files.length; i++) {
@@ -28,7 +32,8 @@ angular.module('wanderlustApp')
                 },
                 data: e.target.result
               }).progress(function(evt) {
-                console.log('percent: ' + parseInt(100.0 * evt.loaded / evt.total));
+                $scope.spot.progress = parseInt(100.0 * evt.loaded / evt.total);
+                // console.log('percent: ' + parseInt(100.0 * evt.loaded / evt.total));
               }).success(function(data, status, headers, config) {
                 // file is uploaded successfully
                 console.log('upload successful!', data);
