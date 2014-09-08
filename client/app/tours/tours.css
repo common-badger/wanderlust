@@ -27,8 +27,8 @@
 .footer {
   text-align: center;
   padding: 30px 0;
-  margin-top: 70px;
-  border-top: 1px solid #E5E5E5;
+  margin-top: 75px;
+  border-top: none;
 }
 
 .lead {
@@ -48,8 +48,11 @@
   text-align: center;
 }
 
-.container {
+
+.containerTours {
   text-align: -webkit-center;
+  width: 75%;
+  margin: 0 auto;
 }
 
 .tourView {
@@ -57,10 +60,17 @@
   border-spacing: 3px;
   width: 350px;
   height: 200px;
-  display: inline-block;
+  padding-right: 5px;
+  float: left;
 }
 
 .tourViewInfo {
-  text-align: left;
+  text-align: right;
 }
 
+.containerAdventure {
+  width: 75%;
+  margin: 0 auto;
+  text-align: -webkit-center;
+  display: inline-block;
+}
