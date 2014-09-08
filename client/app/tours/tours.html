@@ -16,7 +16,7 @@
 
 <div class="containerTours" ng-repeat="tour in tours">
   <div class="tourView" ng-click="selectedTour()">
-    <img class="map" src="assets/images/SF_Mission_map.png" alt="Mission District">
+    <img class="map" src="assets/images/{{tour.neighborhood[0]}}.png" alt="Mission District">
     <div class="tourViewInfo">
       <span>{{tour.title}}</span></br>
       <span>{{tour.duration}}</span></br>
