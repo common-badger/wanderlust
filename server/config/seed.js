@@ -33,20 +33,18 @@ Tour.find({}).remove(function() {
       title: 'The Market',
       author: user._id,
       description: 'dig out the places to eat around Hack Reactor',
-      reviews:[{body:'good',rating:4},{body:'okay',rating:3}],
       city: 'San Francisco',
       duration: 'All day',
-      theme: ['Romantic'],
-      neighborhood: ['Mission']
+      neighborhood: ['Mission'],
+      spots: [{free:true, outdoors: true, task: 'take a photo', address: '1 Market Street'}]
     },{
       title: 'Wonderful Sunset',
       author: user._id,
       description: 'find out the good hiking place hidden here',
-      reviews:[{body:'This is awesome!', rating: 5}],
       city: 'San Francisco',
       duration: 'All day',
-      theme: ['Nighttime'],
-      neighborhood: ['Sunset']
+      neighborhood: ['Sunset'],
+      spots: [{free: true, indoors: true, task: 'play basketball', address: '6th Street'}]
     }]);
   })
 });
