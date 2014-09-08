@@ -8,7 +8,7 @@ angular.module('wanderlustApp')
       glhf: function(){
         alert('good luck, have fun!');
       }
-    }
+    };
   })
 
   .controller('ShowtourCtrl', function ($scope, GoExplore) {

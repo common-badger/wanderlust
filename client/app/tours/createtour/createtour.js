@@ -31,14 +31,14 @@ angular.module('wanderlustApp')
                 console.log('percent: ' + parseInt(100.0 * evt.loaded / evt.total));
               }).success(function(data, status, headers, config) {
                 // file is uploaded successfully
-                console.log("upload successful!", data);
+                console.log('upload successful!', data);
                 // Add data.link to $scope.spot[$index].imgurl
                 $scope.spot.imgurl = data.data.link;
               }).error(function(data) {
                 console.error(data);
               });
             };
-          };
+          }
         };
       },
       templateUrl: 'app/tours/createtour/wdlSpot.directive.html'

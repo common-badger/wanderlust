@@ -41,8 +41,8 @@ describe('GET /api/citys', function() {
       Tour.create(tour1,tour2,function(err){
         if(err) done(err);
         done();
-      });  
-    });   
+      });
+    });
   });
 
   it('should respond with tours around the city requested', function(done){
@@ -55,7 +55,7 @@ describe('GET /api/citys', function() {
           if(err) return done(err);
           res.body.length.should.equal(2);
           done();
-        });  
+        });
     });
   });
 });

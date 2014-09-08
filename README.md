@@ -31,7 +31,7 @@ Curate your city’s hidden gems for others to fall in love with or cure your wa
 
 ### Installing Dependencies
 
-To get started execute the following commands: 
+To get started execute the following commands:
 
 <b>Step 1:</b> Install the dependencies with the following commands
 ```sh
@@ -62,9 +62,9 @@ grunt serve
 
 For additional information read the [doc/\_START\_HERE.md] (doc/_START_HERE.md) for more detailed on-boarding.
 
-### Troubleshooting 
+### Troubleshooting
 
-A frequently occurring error when running mongod was 
+A frequently occurring error when running mongod was
 ```sh
 ERROR: dbpath (/data/db) does not exist.
 ```

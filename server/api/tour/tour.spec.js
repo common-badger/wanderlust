@@ -72,7 +72,7 @@ describe('GET /api/tours/:id',function(){
     .end(function(err,res){
       res.body.title.should.have.equal('The Mission Mission');
       done();
-    });      
+    });
   });
 });
 
