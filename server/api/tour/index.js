@@ -15,4 +15,3 @@ router.delete('/:id', auth.isAuthenticated(),controller.destroy);
 router.post('/:id/rating',auth.isAuthenticated(),controller.addReview);
 
 module.exports = router;
-

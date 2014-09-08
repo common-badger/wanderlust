@@ -1,6 +1,7 @@
 # Wanderlust
 
-Curate your city’s hidden gems for others to fall in love with or cure your wanderlust by exploring the city through a new perspective.
+Curate your city’s hidden gems for others to fall in love with.
+Explore your own beloved city through new eyes.
 
 ## Team
 
@@ -8,7 +9,7 @@ Curate your city’s hidden gems for others to fall in love with or cure your wa
   - __Scrum Master__: Park Loqi Tamaroon
   - __Development Team Members__: Haiming Bao & Dominic Czarnota
 
-  Dedicated to Dan's Uncle FIXME, who inspired this project TODO ...
+  Dedicated to FIXME Thareja, who welcomed his brother Dan to San Francisco with a scavenger hunt made just for him.
 
 ## Table of Contents
 
@@ -60,8 +61,6 @@ grunt serve
 
 <b>Step 7:</b> Start hacking!
 
-For additional information read the [doc/\_START\_HERE.md] (doc/_START_HERE.md) for more detailed on-boarding.
-
 ### Troubleshooting
 
 A frequently occurring error when running mongod was
@@ -76,6 +75,8 @@ sudo mkdir -p /data/db
 This should resolve the issue and allow you to run mongod in the command line.
 
 ### Roadmap
+
+For detailed on-boarding, see [doc/\_START\_HERE.md](doc/\_START\_HERE.md)
 
 View the project roadmap [here](LINK_TO_PROJECT_ISSUES)
 
