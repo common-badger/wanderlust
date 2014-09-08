@@ -76,7 +76,6 @@ describe('GET /api/tours/:id',function(){
   });
 });
 
-
 describe('POST /api/tours', function(){
   var token;
 
@@ -197,7 +196,6 @@ describe('POST /api/tours', function(){
             });
         });
   });
-
 
 });
 

@@ -9,7 +9,7 @@ var mongoose = require('mongoose'),
 var titleValidate = [
   validate({
     validator: 'isLength',
-    arguments: [0,50],
+    arguments: [4,50],
     message: 'title should be less than 50 characters'
   })
 ];
