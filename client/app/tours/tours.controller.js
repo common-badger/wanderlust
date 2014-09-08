@@ -30,13 +30,6 @@ angular.module('wanderlustApp')
     };
   })
 
-  .directive('tagDisplayer', function(){
-    httpGET.getData(function(data){
-      $scope.tours = data;
-      return $scopes.tours;    
-    });
-  })
-
   .factory('httpGET', function($http){
     return {
       getData: function(callback){

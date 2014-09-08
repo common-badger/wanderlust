@@ -30,7 +30,7 @@ User.find({}).remove(function() {
 Tour.find({}).remove(function() {
   User.find({name:'Test User'}, function(err,user){
     Tour.create([{
-      title: 'The Market',
+      title: 'The Mission Mission',
       author: user._id,
       description: 'dig out the places to eat around Hack Reactor',
       city: 'San Francisco',
@@ -49,6 +49,42 @@ Tour.find({}).remove(function() {
       duration: 'All day',
       neighborhood: ['Sunset'],
       spots: [{free: true, indoors: true, task: 'play basketball', address: '6th Street'}]
+    },{
+      title: 'Hill Conqueror',
+      author: user._id,
+      description: 'Climb all the hills for some stunning views',
+      city: 'San Francisco',
+      review: [{body: 'Cool!', rating: 4}],
+      duration: 'Half day',
+      neighborhood: ['Sunset'],
+      spots: [{free: true, indoors: true, task: 'climb the big hill', address: '6th Street'}]
+    },{
+      title: 'Street Art Explorer',
+      author: user._id,
+      description: 'Find the best street art',
+      city: 'San Francisco',
+      review: [{body: 'Cool!', rating: 4}],
+      duration: 'Half day',
+      neighborhood: ['Sunset'],
+      spots: [{free: true, indoors: true, task: 'climb the big hill', address: '6th Street'}]
+    },{
+      title: 'Grateful Dead Music Tour',
+      author: user._id,
+      description: 'A blast back to the 60s',
+      city: 'San Francisco',
+      review: [{body: 'Cool!', rating: 4}],
+      duration: 'Many days',
+      neighborhood: ['Sunset'],
+      spots: [{free: true, indoors: true, task: 'climb the big hill', address: '6th Street'}]
+    },{
+      title: 'Farmers\' Market Extravaganza',
+      author: user._id,
+      description: 'All the fresh fruit and veggies',
+      city: 'San Francisco',
+      review: [{body: 'Cool!', rating: 4}],
+      duration: 'Around an hour',
+      neighborhood: ['Sunset'],
+      spots: [{free: true, indoors: true, task: 'climb the big hill', address: '6th Street'}]
     }]);
   })
 });
