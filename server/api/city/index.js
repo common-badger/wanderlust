@@ -9,4 +9,3 @@ router.get('/', controller.index);
 router.get('/:city_name', controller.byCity);
 
 module.exports = router;
-
