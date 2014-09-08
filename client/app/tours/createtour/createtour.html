@@ -28,6 +28,7 @@
               <option value="half-day">Half day</option>
               <option value="hour">Around an hour</option>
             </select><br>
+            <!-- TODO: Make neighborhood push to array called neighborhood, not just a string -->
             <label>Neighborhood</label>
             <select class="form-control" ng-model="tour.neighborhood">
               <option ng-repeat="neighborhood in neighborhoods" value="{{neighborhood}}">{{neighborhood}}</option>

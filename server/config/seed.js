@@ -47,7 +47,7 @@ Tour.find({}).remove(function() {
       city: 'San Francisco',
       review: [{body: 'Cool!', rating: 4}],
       duration: 'All day',
-      neighborhood: ['Sunset'],
+      neighborhood: ['Inner-Sunset'],
       spots: [{free: true, indoors: true, task: 'play basketball', address: '6th Street'}]
     },{
       title: 'Hill Conqueror',
@@ -74,7 +74,7 @@ Tour.find({}).remove(function() {
       city: 'San Francisco',
       review: [{body: 'Cool!', rating: 4}],
       duration: 'Many days',
-      neighborhood: ['Parkside'],
+      neighborhood: ['Golden-Gate-Park'],
       spots: [{free: true, indoors: true, task: 'climb the big hill', address: '6th Street'}]
     },{
       title: 'Farmers\' Market Extravaganza',
@@ -83,7 +83,7 @@ Tour.find({}).remove(function() {
       city: 'San Francisco',
       review: [{body: 'Cool!', rating: 4}],
       duration: 'Around an hour',
-      neighborhood: ['Tenderloin'],
+      neighborhood: ['Dogpatch'],
       spots: [{free: true, indoors: true, task: 'climb the big hill', address: '6th Street'}]
     }]);
   })
