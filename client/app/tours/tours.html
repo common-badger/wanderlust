@@ -14,13 +14,12 @@
   </div>
 </div>
 
-<div class="container">
-
-    <div class="tourView" ng-click="selectedTour()">
+<div class="containerTours" ng-repeat="tour in tours">
+  <div class="tourView" ng-click="selectedTour()">
     <img class="map" src="assets/images/SF_Mission_map.png" alt="Mission District">
     <div class="tourViewInfo">
-      <span> {{tours.name}} </span></br>
-      <span> {{tours.length}} </span></br>
+      <span>{{tour.title}}</span></br>
+      <span>{{tour.duration}}</span></br>
       <!-- directives that add bootstrap icons -->
       <star-Rating></star-Rating>
       <star-Rating></star-Rating>
@@ -32,92 +31,12 @@
       <tag-Tree></tag-Tree>
     </div>
   </div>
-
-    <div class="tourView" ng-click="selectedTour()">
-    <img class="map" src="assets/images/SF_Mission_map.png" alt="Mission District">
-    <div class="tourViewInfo">
-      <span> {{tours.name}} </span></br>
-      <span> {{tours.length}} </span></br>
-      <star-Rating></star-Rating>
-      <star-Rating></star-Rating>
-      <star-Rating></star-Rating>
-      <star-Rating></star-Rating>
-      <star-Rating></star-Rating><br>
-      <tag-Price></tag-Price>
-      <tag-Camera></tag-Camera>
-      <tag-Tree></tag-Tree>
-    </div>
-  </div>
-
-    <div class="tourView" ng-click="selectedTour()">
-    <img class="map" src="assets/images/SF_Mission_map.png" alt="Mission District">
-    <div class="tourViewInfo">
-      <span> {{tours.name}} </span></br>
-      <span> {{tours.length}} </span></br>
-      <star-Rating></star-Rating>
-      <star-Rating></star-Rating>
-      <star-Rating></star-Rating>
-      <star-Rating></star-Rating>
-      <star-Rating></star-Rating><br>
-      <tag-Price></tag-Price>
-      <tag-Camera></tag-Camera>
-      <tag-Tree></tag-Tree>
-    </div>
-  </div>
-
-    <div class="tourView" ng-click="selectedTour()">
-    <img class="map" src="assets/images/SF_Mission_map.png" alt="Mission District">
-    <div class="tourViewInfo">
-      <span> {{tours.name}} </span></br>
-      <span> {{tours.length}} </span></br>
-      <star-Rating></star-Rating>
-      <star-Rating></star-Rating>
-      <star-Rating></star-Rating>
-      <star-Rating></star-Rating>
-      <star-Rating></star-Rating><br>
-      <tag-Price></tag-Price>
-      <tag-Camera></tag-Camera>
-      <tag-Tree></tag-Tree>
-    </div>
-  </div>
-
-    <div class="tourView" ng-click="selectedTour()">
-    <img class="map" src="assets/images/SF_Mission_map.png" alt="Mission District">
-    <div class="tourViewInfo">
-      <span> {{tours.name}} </span></br>
-      <span> {{tours.length}} </span></br>
-      <star-Rating></star-Rating>
-      <star-Rating></star-Rating>
-      <star-Rating></star-Rating>
-      <star-Rating></star-Rating>
-      <star-Rating></star-Rating><br>
-      <tag-Price></tag-Price>
-      <tag-Camera></tag-Camera>
-      <tag-Tree></tag-Tree>
-    </div>
-  </div>
-
-    <div class="tourView" ng-click="selectedTour()">
-    <img class="map" src="assets/images/SF_Mission_map.png" alt="Mission District">
-    <div class="tourViewInfo">
-      <span> {{tours.name}} </span></br>
-      <span> {{tours.length}} </span></br>
-      <star-Rating></star-Rating>
-      <star-Rating></star-Rating>
-      <star-Rating></star-Rating>
-      <star-Rating></star-Rating>
-      <star-Rating></star-Rating><br>
-      <tag-Price></tag-Price>
-      <tag-Camera></tag-Camera>
-      <tag-Tree></tag-Tree>
-    </div>
-  </div>
-
 </div>
 
-
-<footer class="footer">
-  <div class="container">
-    <a class="btn btn-default" type="button" href="#/tours/createtour">Create an Adventure</a>
-  </div>
-</footer>
+<div class="row">
+  <footer class="footer">
+    <div class="container containerAdventure">
+      <a class="btn btn-default" type="button" href="#/tours/createtour">Create an Adventure</a>
+    </div>
+  </footer>
+</div>
