@@ -1,3 +1,6 @@
+// Wanderlust:
+// We don't use this yet. It's for testing Angular apps.
+
 // Protractor configuration
 // https://github.com/angular/protractor/blob/master/referenceConf.js
 
