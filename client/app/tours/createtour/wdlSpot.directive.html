@@ -1,29 +1,31 @@
-<div class="row spot">
-  <div class="col-md-12">
-    Tags:
-    <label class="btn btn-primary" ng-model="spot.free" btn-checkbox>Free</label>
-    <label class="btn btn-primary" ng-model="spot.paid" btn-checkbox>Paid</label>
-    <label class="btn btn-primary" ng-model="spot.indoors" btn-checkbox>Indoors</label>
-    <label class="btn btn-primary" ng-model="spot.outdoors" btn-checkbox>Outdoors</label>
-    <label class="btn btn-primary" ng-model="spot.photo" btn-checkbox>Photograph</label>
-    <label class="btn btn-primary" ng-model="spot.adventure" btn-checkbox>Adventure</label>
-    <label class="btn btn-primary" ng-model="spot.food" btn-checkbox>Food</label>
-    <label class="btn btn-primary" ng-model="spot.drink" btn-checkbox>Drink</label>
-    <div class="col-md-4-offset-3">
-      Task: <input type="text" ng-model="spot.task"><br>
-      Address: <input type="text" ng-model="spot.address"><br>
-    </div>
+<!-- <div class="row"> -->
+  <div class="panel panel-default">
+    <div class="panel-heading">Spot details</div>
+    <div class="panel-body">
+      <label>Tags</label>
+      <label class="btn btn-xs btn-primary" ng-model="spot.free" btn-checkbox>Free</label>
+      <label class="btn btn-xs btn-primary" ng-model="spot.paid" btn-checkbox>Paid</label>
+      <label class="btn btn-xs btn-primary" ng-model="spot.indoors" btn-checkbox>Indoors</label>
+      <label class="btn btn-xs btn-primary" ng-model="spot.outdoors" btn-checkbox>Outdoors</label>
+      <label class="btn btn-xs btn-primary" ng-model="spot.photo" btn-checkbox>Photograph</label>
+      <label class="btn btn-xs btn-primary" ng-model="spot.adventure" btn-checkbox>Adventure</label>
+      <label class="btn btn-xs btn-primary" ng-model="spot.food" btn-checkbox>Food</label>
+      <label class="btn btn-xs btn-primary" ng-model="spot.drink" btn-checkbox>Drink</label><br>
 
-    <!-- Points -->
-    <div class="col-md-3-offset-5">
-      Points: <select ng-model="spot.points">
+      <label>Task</label><input type="text" ng-model="spot.task"><br>
+      <label>Address</label><input type="text" ng-model="spot.address"><br>
+
+      <!-- Points -->
+      <label>Points</label>
+      <select ng-model="spot.points">
         <option value="5">Easy - 5</option>
         <option value="10">Average - 10</option>
         <option value="20">Hard - 20</option>
       </select><br>
-    </div>
 
-    <!-- Picture upload -->
-    <input type="file" ng-file-select="onFileSelect($files)">
+      <!-- Picture upload -->
+      <label>Upload a picture (optional)</label>
+      <input type="file" ng-file-select="onFileSelect($files)">
+    </div>
   </div>
-</div>
+<!-- </div> -->
