@@ -1,26 +1,47 @@
-/*.thing-form {
-    margin: 20px 0;
-}
-*/
+/*.main.container {
+    overflow-y: hidden ! important;
+    overflow-x: hidden ! important;
+    background-image: url('/assets/images/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}*/
 
-#banner {
-    border-bottom: none;
-    margin-top: -20px;
+.col-centered{
+    float: none;
+    margin: 0 auto;
 }
 
-#banner h1 {
+.header {
+    color: rgba(255, 255, 255, .8);
     font-size: 60px;
     line-height: 1;
     letter-spacing: -1px;
+    text-align: center;
 }
 
-.hero-unit {
-    position: relative;
-    padding: 30px 15px;
-    color: #F5F5F5;
+.form-location {
     text-align: center;
-    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-    background: #4393B9;
+    margin: 50px 0px;
+}
+
+.tag {
+    margin-top: 30px;
+    color: rgba(255, 255, 255, .8);
+    text-align: center;
+}
+
+.label-location {
+    color: rgba(251, 210, 88, .8);
+    font-size: 35px;
+}
+
+.input-location {
+    width: 250px;
+    height: 40px;
+    border: 2px solid rgba(251, 210, 88, 1);
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 5px 5px;
 }
 
 .footer {
