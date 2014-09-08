@@ -23,15 +23,17 @@ var TourSchema = new Schema({
   title: {type:String, required:true, validate:titleValidate, trim:true},
   author: {type: Schema.ObjectId, ref: User},
   description: String,
-  reviews: [{body: String, rating: {type:Number, max:5, min:0}, reviewer: {type: Schema.ObjectId, ref: User}}],
+  reviews: [{body: String, rating: {type:Number, max:5, min:0}, reviewer: {type: Schema.ObjectId, ref: User}}],     //future features to fulfill on the front-end side
   city: String,
   duration: {type: String},
-  theme: [{type:String, enum: themes}],
+  theme: [{type:String, enum: themes}],   //future feature
   neighborhood: [String],
-  cost: {type: String, enum: costs},
+  cost: {type: String, enum: costs},      //future feature
   createdAt: {type: Date, default: Date.now()},
   spots: [{
-    // tags:[String],
+    // tags:[String], 
+    // in future iterations, it would be good to use consolidate all the boolean properties into
+    // tags property
     free: Boolean,
     paid: Boolean,
     indoors: Boolean,
@@ -42,7 +44,7 @@ var TourSchema = new Schema({
     drink: Boolean,
     task: String,
     address: String,
-    points: String,
+    points: String,      //todo: changes it to integer and make it a property of user
     imgurl: String
   }]
 });
