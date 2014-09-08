@@ -1,10 +1,18 @@
+/*.main.container {
+    overflow-y: hidden ! important;
+    overflow-x: hidden ! important;
+    background-image: url('/assets/images/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}*/
+
 .col-centered{
     float: none;
     margin: 0 auto;
 }
 
 .header {
-    color: #FFFFFF;
+    color: rgba(255, 255, 255, .8);
     font-size: 60px;
     line-height: 1;
     letter-spacing: -1px;
@@ -13,22 +21,25 @@
 
 .form-location {
     text-align: center;
-    margin-top: 10%;
+    margin: 50px 0px;
 }
 
-.lead {
-    color: #FFFFFF;
+.tag {
+    margin-top: 30px;
+    color: rgba(255, 255, 255, .8);
     text-align: center;
-    margin-top: 25px;
-
 }
 
 .label-location {
-    color: #FFFFFF;
-    font-size: 25px;
+    color: rgba(251, 210, 88, .8);
+    font-size: 35px;
 }
 
 .input-location {
+    width: 250px;
+    height: 40px;
+    border: 2px solid rgba(251, 210, 88, 1);
+    border-radius: 5px;
     background-color: rgba(255, 255, 255, 1);
     padding: 5px 5px;
 }

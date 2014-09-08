@@ -42,7 +42,7 @@ angular.module('wanderlustApp', [
     };
   })
 
-  .run(function ($rootScope, $location, Auth) {
+  .run(function ($rootScope, $location, $document, Auth) {
     // Redirect to login if route requires auth and you're not logged in
     $rootScope.$on('$stateChangeStart', function (event, next) {
       Auth.isLoggedInAsync(function(loggedIn) {
@@ -50,5 +50,22 @@ angular.module('wanderlustApp', [
           $location.path('/login');
         }
       });
+    });
+
+    // Show background image only on splash page
+    $rootScope.$on('$stateChangeSuccess', function (event, next) {
+      if ($location.path() === "/") {
+        angular.element($document[0].body).css({
+          'overflow-y': 'hidden ! important',
+          'overflow-x': 'hidden ! important',
+          'background-image': "url('/assets/images/background.jpg')",
+          'background-size': 'cover',
+          'background-repeat': 'no-repeat'
+        });
+      } else {
+        angular.element($document[0].body).css({
+          'background-image': 'none'
+        });
+      }
     });
   });
