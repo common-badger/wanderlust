@@ -49,6 +49,9 @@ var TourSchema = new Schema({
   }]
 });
 
+
+//This virtual could return the shortened profile of a single tour, which could be used in the future
+// in api/:cityname.
 TourSchema
   .virtual('profile')
   .get(function(){
@@ -70,19 +73,5 @@ TourSchema.method('findAuthor',function(callback){
   return this.db.model('User').findById(this.author,callback);
 });
 
-// TourSchema.method('addReviews',function(review,cb){
-//   this.reviews.push(review);
-//   console.log('********',this.reviews);
-//   this.save(function(err,data){
-//     console.log('---------',err);
-//     console.log('++++++++',data);
-//     cb(err,data);
-//   });
-// });
-
-// TourSchema.method('addSpot',function(spot){
-//   this.spots.push(spot._id);
-// });
-// TourSchema.plugin(uniqueValidator);
 
 module.exports = mongoose.model('Tour', TourSchema);
