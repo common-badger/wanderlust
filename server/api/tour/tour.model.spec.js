@@ -7,8 +7,6 @@ var should = chai.Should();
 var Tour = require('./tour.model');
 var User = require('../user/user.model');
 
-
-
 var user = new User({
   provider: 'local',
   name: 'Fake User',

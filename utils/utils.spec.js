@@ -22,11 +22,11 @@ describe('stats.js ', function () {
     //   expect(median(['12'])).to.equal(12); //   etc...
   });
 
-  it('has a correct hyphed_from_spaced() function', function () { // "San Francisco" -> 'san-francisco'
+  it('has a correct hyphedFromSpaced() function', function () { // "San Francisco" -> 'san-francisco'
     expect(hyphenated).to.be.a('function');
   });
 
-  it('has a correct spaced_from_hyphed() function', function () { // "san-francisco" -> 'San Francisco'
+  it('has a correct spacedFromHyphed() function', function () { // "san-francisco" -> 'San Francisco'
     expect(hyphenated).to.be.a('function');
   });
 
