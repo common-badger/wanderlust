@@ -128,4 +128,15 @@ Some possible future server requests:
 
 ## File Structure
 
-+ utils/              - Code shared across front and back.
++ doc/ -- detailed documentation
++ assets/ -- images used by client side
++ client/app/ -- this is where all the Angular code lives
++ client/app/account/ -- manage user account
++ client/app/admin/ -- functions for administrative users
++ client/app/main/ -- Splash screen and home page
++ client/app/tours/ -- Splash page directs here. Browse tours with sorting and filters.
++ client/app/tours/createtour/ Form page to build a new tour. Tours sub-view.
++ client/app/tours/showtour/ Detail page for a specific tour.
++ server/api/ -- router code
++ server/config/local.env.sample.js -- secrets and keys for auth services
++ utils/ -- Code intended to be shared by both front and back
