@@ -16,6 +16,7 @@ describe('Controller: ShowtourCtrl', function () {
   }));
 
   it('should ...', function () {
+    console.log(scope.tours);
     expect(1).toEqual(1);
   });
 });

@@ -5,21 +5,31 @@
   <!-- Tour details -->
   <div class="row">
     <div class="col-md-12">
-      <h2>Tour details</h2>
-      Title: <input type="text" ng-model="tour.title"><br>
-      Description: <input type="text" ng-model="tour.description"><br>
-      <!-- Do this "the angular way" aka put in directive with more options -->
-      Duration: 
-      <select ng-model="tour.duration">
-        <option value="multiday">Many days</option>
-        <option value="one-day">All day</option>
-        <option value="half-day">Half day</option>
-        <option value="hour">Around an hour</option>
-      </select><br>
-      Neighborhood: 
-      <select ng-model="tour.neighborhood">
-        <option ng-repeat="neighborhood in neighborhoods" value="{{neighborhood}}">{{neighborhood}}</option>
-      </select><br>
+      <div class="col-md-4 col-md-offset-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            Tour details
+          </div>
+          <div class="panel-body">
+            <label>Title</label>
+            <input class="form-control" type="text" ng-model="tour.title"><br>
+            <label>Description</label>
+            <input class="form-control" type="text" ng-model="tour.description"><br>
+            <!-- Do this "the angular way" aka put in directive with more options -->
+            <label>Duration</label>
+            <select class="form-control" ng-model="tour.duration">
+              <option value="multiday">Many days</option>
+              <option value="one-day">All day</option>
+              <option value="half-day">Half day</option>
+              <option value="hour">Around an hour</option>
+            </select><br>
+            <label>Neighborhood</label>
+            <select class="form-control" ng-model="tour.neighborhood">
+              <option ng-repeat="neighborhood in neighborhoods" value="{{neighborhood}}">{{neighborhood}}</option>
+            </select><br>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -32,5 +42,3 @@
   <button ng-click="addSpot()">Add Spot</button>
   <button ng-click="createTour()">Done!</button>
 </div>
-  
-  

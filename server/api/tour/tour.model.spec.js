@@ -2,7 +2,7 @@
 
 var chai = require('chai');
 var should = chai.Should();
-var Promise = require('bluebird');
+// var Promise = require('bluebird');
 // var Tour = Promise.promisifyAll(require('./tour.model'));
 var Tour = require('./tour.model');
 var User = require('../user/user.model');
