@@ -18,7 +18,7 @@ describe('Controller: CreatetourCtrl', function () {
 
   it('should increase scope.spots array by one, when addSpot()', function () {
     var lenBefore = scope.spots.length;
-    scope.addSpot()
+    scope.addSpot();
     expect(scope.spots.length).toEqual(lenBefore+1);
   });
 });

@@ -65,36 +65,23 @@ $ grunt test:server will run the tests on the server side over a new clean datab
 
 ### Minimum Viable Product
   + Users (wanderer and guide)
-  + Create and do tours
+  + Create and do tours (collections of spots)
   + Spots (geographical data)
-
-### MVP+
-  + Instagram
   + Point system
-  + Tour map
-  + Tour.geobox: {nwLon:num , nwLat:num , swLon:num , swLat:num }
 
-### Future and fantasy features
-  1. “Claim/own a spot” – location of interest
-  2. “Guide” (user) – creator of tour
-  3. “Wanderer” (user) – scavenger
-    + points
-  4. “Tour” – collection (ordered or unordered list) of spots 
-     has unified theme
-    + has specific location associated
-    + categorize
-  5. “Hunt” – challenge or game like a tour
-  6. “Event” – one time thing (certain time/place)
-  7. “Action” – take a picture
-  8. “Tour map” – map object
-  9. “Geocaching” – Wanderlust branded capsule
-    + super visual, tie to Instagram
-  10. “Points” – reveal more spots/spend points
-  11. “Action” – take a picture
-    + buy something
-    + check in
-  12. “Featured” – tour of the week
-  13. “Everything at once” or “sequential” or “split” – average time and distance/transport methods mode
+
+### Suggested future features
+  + Instagram integration
+  + Live tour map
+  + Claim/own a spot – location of interest
+  + Game mode – challenge or hunt game like a tour with progressively easing hints
+  + Event – one time thing (certain time/place)
+  + Geocaching – Leave a physical trinket to be discovered
+  + Super visual, tie to Instagram
+  + Earn status – users unlock extra functionality by scoring points
+  + Featured – tour of the week
+  + Everything at once or sequential or split
+  + real-time statistics collection
 
 ## REST client/server API
 
@@ -138,3 +125,18 @@ Some possible future server requests:
   "add my personal addendum of spots to this tour"
   "declare that a spot is a duplicate of another spot"
   "show me some tours that contain this spot"
+
+## File Structure
+
++ doc/ -- detailed documentation
++ assets/ -- images used by client side
++ client/app/ -- this is where all the Angular code lives
++ client/app/account/ -- manage user account
++ client/app/admin/ -- functions for administrative users
++ client/app/main/ -- Splash screen and home page
++ client/app/tours/ -- Splash page directs here. Browse tours with sorting and filters.
++ client/app/tours/createtour/ Form page to build a new tour. Tours sub-view.
++ client/app/tours/showtour/ Detail page for a specific tour.
++ server/api/ -- router code
++ server/config/local.env.sample.js -- secrets and keys for auth services
++ utils/ -- Code intended to be shared by both front and back

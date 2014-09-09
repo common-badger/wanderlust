@@ -56,7 +56,11 @@ Tour.find({}).remove(function() {
       city: 'San Francisco',
       review: [{body: 'Cool!', rating: 4}],
       duration: 'Half day',
+<<<<<<< HEAD
       neighborhood: ['Downtown'],
+=======
+      neighborhood: ['Sunset'],
+>>>>>>> 434a4f7355e170e75d764a2672046d88a2063985
       spots: [{free: true, indoors: true, task: 'climb the big hill', address: '6th Street'}]
     },{
       title: 'Street Art Explorer',
@@ -65,7 +69,11 @@ Tour.find({}).remove(function() {
       city: 'San Francisco',
       review: [{body: 'Cool!', rating: 4}],
       duration: 'Half day',
+<<<<<<< HEAD
       neighborhood: ['Lakeshore'],
+=======
+      neighborhood: ['Sunset'],
+>>>>>>> 434a4f7355e170e75d764a2672046d88a2063985
       spots: [{free: true, indoors: true, task: 'climb the big hill', address: '6th Street'}]
     },{
       title: 'Grateful Dead Music Tour',
@@ -74,7 +82,11 @@ Tour.find({}).remove(function() {
       city: 'San Francisco',
       review: [{body: 'Cool!', rating: 4}],
       duration: 'Many days',
+<<<<<<< HEAD
       neighborhood: ['Golden-Gate-Park'],
+=======
+      neighborhood: ['Sunset'],
+>>>>>>> 434a4f7355e170e75d764a2672046d88a2063985
       spots: [{free: true, indoors: true, task: 'climb the big hill', address: '6th Street'}]
     },{
       title: 'Farmers\' Market Extravaganza',
@@ -83,7 +95,11 @@ Tour.find({}).remove(function() {
       city: 'San Francisco',
       review: [{body: 'Cool!', rating: 4}],
       duration: 'Around an hour',
+<<<<<<< HEAD
       neighborhood: ['Dogpatch'],
+=======
+      neighborhood: ['Sunset'],
+>>>>>>> 434a4f7355e170e75d764a2672046d88a2063985
       spots: [{free: true, indoors: true, task: 'climb the big hill', address: '6th Street'}]
     }]);
   })

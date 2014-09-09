@@ -7,8 +7,6 @@ var should = chai.Should();
 var Tour = require('./tour.model');
 var User = require('../user/user.model');
 
-
-
 var user = new User({
   provider: 'local',
   name: 'Fake User',
@@ -44,9 +42,41 @@ describe('Tour Model',function(){
     })
   });
 
-  it('should not save data with title bigger than 50 char',function(done){
+  it('should save a 4 character tour title',function(done){
     var tourMax = new Tour({
-      title: 'avonawoevnapowiniruvirunipuraniuvnianvrvaowvanoiwnvepawnoievnauernvoinuviapwouaowpnvpowienv'
+      title: '1234'
+    });
+    tourMax.save(function(err,data){
+      should.not.exist(err);
+      should.exist(data);
+      done();
+    });
+  });
+
+  it('should not save a 3 character tour title',function(done){
+    var tourMax = new Tour({
+      title: '123'
+    });
+    tourMax.save(function(err,data){
+      should.exist(err);
+      done();
+    });
+  });
+
+  it('should save a 50 character tour title',function(done){
+    var tourMax = new Tour({
+      title: '123456789 123456789 123456789 123456789 1234567890'
+    });
+    tourMax.save(function(err,data){
+      should.not.exist(err);
+      should.exist(data);
+      done();
+    });
+  });
+
+  it('should not save a 51 character tour title',function(done){
+    var tourMax = new Tour({
+      title: '123456789 123456789 123456789 123456789 123456789 1'
     });
     tourMax.save(function(err,data){
       should.exist(err);
@@ -98,3 +128,4 @@ describe('Tour Model',function(){
   // });
 });
 
+// TODO: Test for findAuthor

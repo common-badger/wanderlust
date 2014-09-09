@@ -1,6 +1,7 @@
 # Wanderlust
 
-Curate your city’s hidden gems for others to fall in love with or cure your wanderlust by exploring the city through a new perspective.
+Curate your city’s hidden gems for others to fall in love with.
+Explore your own beloved city through new eyes.
 
 ## Team
 
@@ -61,8 +62,6 @@ grunt serve
 
 <b>Step 7:</b> Start hacking!
 
-For additional information read the [doc/\_START\_HERE.md] (doc/_START_HERE.md) for more detailed on-boarding.
-
 ### Troubleshooting
 
 A frequently occurring error when running mongod was
@@ -77,6 +76,8 @@ sudo mkdir -p /data/db
 This should resolve the issue and allow you to run mongod in the command line.
 
 ### Roadmap
+
+For detailed on-boarding, see [doc/\_START\_HERE.md](doc/\_START\_HERE.md)
 
 View the project roadmap [here](LINK_TO_PROJECT_ISSUES)
 
